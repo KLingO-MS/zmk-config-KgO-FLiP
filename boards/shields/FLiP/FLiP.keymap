@@ -606,7 +606,7 @@
                         bindings = <
    &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp GRAVE     &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
    &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp LT        &kp GT    &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
-   &kp GRAVE       &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp HASH        &kp DLLR       &kp TILDE
+                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp HASH        &kp DLLR
                                                           &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
                         >;
                 };
