@@ -203,6 +203,7 @@
 
         combo_NAVR {
             timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
             key-positions = <RMI RMM RMR>;
             bindings = <&tog _NAV>;
             layers = <_BASE _SYM _NAV>;
@@ -210,6 +211,7 @@
 
         combo_NAVL {
             timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
             key-positions = <LMI LMM LMR>;
             bindings = <&tog _NAV>;
             layers = <_BASE _SYM _NAV>;
@@ -324,6 +326,7 @@
 // ------------------------- SYMBOL COMBOS --------------------------------
         combo_LPAR {
             timeout-ms = <45>;
+            require-prior-idle-ms = <200>;
             key-positions = <LMM LMI>;
             bindings = <&kp LPAR>;
             layers = <_BASE _SYM>;
@@ -331,6 +334,7 @@
 
         combo_RPAR {
             timeout-ms = <45>;
+            require-prior-idle-ms = <200>;
             key-positions = <RMI RMM>;
             bindings = <&kp RPAR>;
             layers = <_BASE _SYM>;
@@ -338,6 +342,7 @@
 
         combo_LBRC {
             timeout-ms = <45>;
+            require-prior-idle-ms = <200>;
             key-positions = <LTM LTI>;
             bindings = <&kp LBRC>;
             layers = <_BASE _SYM>;
@@ -345,6 +350,7 @@
 
         combo_RBRC {
             timeout-ms = <45>;
+            require-prior-idle-ms = <200>;
             key-positions = <RTI RTM>;
             bindings = <&kp RBRC>;
             layers = <_BASE _SYM>;
@@ -352,6 +358,7 @@
 
         combo_LBKT {
             timeout-ms = <45>;
+            require-prior-idle-ms = <200>;
             key-positions = <LBM LBI>;
             bindings = <&kp LBKT>;
             layers = <_BASE _SYM>;
@@ -359,6 +366,7 @@
 
         combo_RBKT {
             timeout-ms = <45>;
+            require-prior-idle-ms = <200>;
             key-positions = <RBI RBM>;
             bindings = <&kp RBKT>;
             layers = <_BASE _SYM>;
