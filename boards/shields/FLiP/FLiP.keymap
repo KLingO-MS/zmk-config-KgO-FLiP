@@ -86,6 +86,18 @@
                 ;
         };
 
+        mlc_ing: macro_lc_ing {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp I>
+                , <&kp N>
+                , <&kp G>
+                ;
+        };
+
         mlc_ould: macro_lc_ould {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -237,6 +249,13 @@
             timeout-ms = <50>;
             key-positions = <RBI RBM RBR>;
             bindings = <&mlc_ould>;
+            layers = <_BASE>;
+        };
+
+        combo_ING {
+            timeout-ms = <50>;
+            key-positions = <RMI RMP>;
+            bindings = <&mlc_ing>;
             layers = <_BASE>;
         };
 
