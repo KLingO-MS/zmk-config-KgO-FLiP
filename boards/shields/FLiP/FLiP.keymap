@@ -405,15 +405,15 @@
         win_cp: win_cp {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&kp LC(C)>, <&kp LC(V)>;
+            tapping-term-ms = <500>;
+            bindings = <&kp LC(C)>, <&kp LC(V)>, <&kp LC(X)>;
         };
 
         mac_cp: mac_cp {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&kp LG(C)>, <&kp LG(V)>;
+            tapping-term-ms = <500>;
+            bindings = <&kp LG(C)>, <&kp LG(V)>, <&kp LG(X)>;
         };
 
         plus_mul: plus_multi {
