@@ -1,11 +1,11 @@
 file_format: "1"
-id: FLiP
-name: FLiP
+id: Rommana
+name: Rommana
 type: shield
-url: FLiP
+url: Rommana
 requires: [pro_micro]
 features:
   - keys
 siblings:
-  - FLiP_left
-  - FLiP_right
+  - Rommana_left
+  - Rommana_right

@@ -19,6 +19,6 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: FLiP_left
+    shield: Rommana_left
   - board: nice_nano_v2
-    shield: FLiP_right
+    shield: Rommana_right
