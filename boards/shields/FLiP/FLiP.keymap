@@ -543,7 +543,7 @@
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
    &kp Z        &kp M        &kp D       &kp L        &kp W           &kp F  &kp P        &kp O       &kp U        &kp K
-   &hml LALT R  &hml LCTRL N &hml LGUI S &hsl LSHFT T &kp J           &kp G  &hsr LSHFT E &hmr LGUI E &hmr LCTRL I &hmr LALT H 
+   &hml LALT R  &hml LCTRL N &hml LGUI S &hsl LSHFT T &kp J           &kp G  &hsr LSHFT E &hmr LGUI A &hmr LCTRL I &hmr LALT H 
                 &kp B        &kp C       &kp V                               &kp Y        &kp Q       &kp X
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
                         >;
