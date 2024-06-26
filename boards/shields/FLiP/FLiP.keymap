@@ -537,14 +537,14 @@
 
                 base_layer {
 // -------------------------------    -------------------------------
-// |  Z  |  M  |  D  |  L  |  W  |    |  Q  |  U  |  O  |  Y  |  K  |
-// |  R  |  N  |  S  |  T  |  G  |    |  F  |  E  |  A  |  I  |  H  |
-//       |  B  |  C  |  V  |                |  P  |  X  |  J  |
+// |  Z  |  M  |  D  |  L  |  W  |    |  X  |  P  |  O  |  Y  |  K  |
+// |  R  |  N  |  S  |  T  |  G  |    |  F  |  A  |  E  |  I  |  H  |
+//       |  B  |  C  |  V  |                |  U  |  Q  |  J  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp Z        &kp M        &kp D       &kp L        &kp W           &kp Q  &kp U        &kp O       &kp Y        &kp K
-   &hml LALT R  &hml LCTRL N &hml LGUI S &hsl LSHFT T &kp G           &kp F  &hsr LSHFT E &hmr LGUI A &hmr LCTRL I &hmr LALT H 
-                &kp B        &kp C       &kp V                               &kp P        &kp X       &kp J
+   &kp Z        &kp M        &kp D       &kp L        &kp W           &kp X  &kp P        &kp O       &kp Y        &kp K
+   &hml LALT R  &hml LCTRL N &hml LGUI S &hsl LSHFT T &kp G           &kp F  &hsr LSHFT A &hmr LGUI E &hmr LCTRL I &hmr LALT H 
+                &kp B        &kp C       &kp V                               &kp U        &kp Q       &kp J
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
                         >;
                 };
