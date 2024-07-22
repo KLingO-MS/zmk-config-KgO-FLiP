@@ -198,21 +198,21 @@
         };
 
 // ------------------------- UTILITY COMBOS --------------------------------
-        combo_CP_M {
-            timeout-ms = <40>;
-            key-positions = <LTR LTM>;
-            bindings = <&mac_cp>;
-            layers = <_BASE>;
-            require-prior-idle-ms = <200>;
-        };
+        // combo_CP_M {
+        //     timeout-ms = <40>;
+        //     key-positions = <LTR LTM>;
+        //     bindings = <&mac_cp>;
+        //     layers = <_BASE>;
+        //     require-prior-idle-ms = <200>;
+        // };
 
-        combo_CP_W {
-            timeout-ms = <40>;
-            key-positions = <LBM LBR>;
-            bindings = <&win_cp>;
-            layers = <_BASE>;
-            require-prior-idle-ms = <200>;
-        };
+        // combo_CP_W {
+        //     timeout-ms = <40>;
+        //     key-positions = <LBM LBR>;
+        //     bindings = <&win_cp>;
+        //     layers = <_BASE>;
+        //     require-prior-idle-ms = <200>;
+        // };
     };
 
     behaviors {
@@ -317,13 +317,13 @@
 
                 base_layer {
 // -------------------------------    -------------------------------
-// |  P  |  L  |  M  |  H  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
-// |  N  |  R  |  T  |  D  |  B  |    |  G  |  S  |  A  |  E  |  I  |
+// |  P  |  M  |  C  |  H  |  F  |    |  W  |  L  |  O  |  U  |  Y  |
+// |  N  |  T  |  S  |  D  |  B  |    |  G  |  R  |  A  |  E  |  I  |
 //       |  J  |  V  |  K  |                |  Z  |  Q  |  X  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp L        &kp M       &kp H        &kp F           &kp W  &kp C        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT D &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+   &kp P        &kp M        &kp C       &kp H        &kp F           &kp W  &kp L        &kp O       &kp U        &kp Y
+   &hml LALT N  &hml LCTRL T &hml LGUI S &hsl LSHFT D &kp B           &kp G  &hsr LSHFT R &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp J        &kp V       &kp K                               &kp Z        &kp Q       &kp X
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
                         >;
@@ -345,13 +345,13 @@
                 
                 sym_layer {
 // -------------------------------    -------------------------------
-// |  \  |  |  |  _  |  =  |  `  |    |  ~  |  "  |  ;  |  :  |  !  |
-// |  /  |  *  |  -  |  +  |  <  |    |  >  |  '  |  ,  |  .  |  ?  |
+// |  \  |  |  |  _  |  =  | mCP |    |  ~  |  "  |  ;  |  :  |  !  |
+// |  /  |  *  |  -  |  +  | wCP |    |  `  |  '  |  ,  |  .  |  ?  |
 //       |  &  |  ^  |  %  |                |  @  |  #  |  $  |
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
-   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp GRAVE     &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
-   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp LT        &kp GT    &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
+   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &mac_cp       &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
+   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &win_cp       &kp GRAVE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
                    &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp HASH        &kp DLLR
                                                           &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
                         >;
