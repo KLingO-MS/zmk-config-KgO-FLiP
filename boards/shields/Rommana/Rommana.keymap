@@ -145,7 +145,7 @@
 
         combo_GH {
             timeout-ms = <80>;
-            key-positions = <LTM LTR>;
+            key-positions = <RBM RBR>;
             bindings = <&mlc_gh>;
             layers = <_BASE>;
         };
