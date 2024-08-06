@@ -234,7 +234,7 @@
         qqu: qqu {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <150>;
             bindings = <&kp Q>, <&mlc_qu>;
         };
 
