@@ -231,6 +231,14 @@
             bindings = <&kp LG(C)>, <&kp LG(V)>, <&kp LG(X)>;
         };
 
+        qqu: qqu {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp Q>, <&mlc_qu>;
+        };
+
+
 // ------------------------- HOLD-TAPS --------------------------------
         /* left-hand HRMs */
         hml: hrm_left {
@@ -319,12 +327,12 @@
 // -------------------------------    -------------------------------
 // |  P  |  C  |  M  |  L  |  W  |    |  G  |  H  |  O  |  U  |  Y  |
 // |  N  |  S  |  T  |  R  |  J  |    |  B  |  D  |  A  |  E  |  I  |
-//       |  F  |  V  |  Z  |                |  K  |  Q  |  X  |
+//       |  F  |  V  |  Z  |                |  K  |  X  |  Qu |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
    &kp P        &kp C        &kp M       &kp L        &kp W           &kp G  &kp H        &kp O       &kp U        &kp Y
    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B  &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp F        &kp V       &kp Z                               &kp K        &kp Q       &kp X
+                &kp F        &kp V       &kp Z                               &kp K        &kp X       &qqu
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
                         >;
                 };
