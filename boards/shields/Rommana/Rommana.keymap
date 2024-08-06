@@ -137,9 +137,16 @@
         };
 
         combo_QU {
-            timeout-ms = <100>;
-            key-positions = <RBM RBR>;
+            timeout-ms = <80>;
+            key-positions = <LBM LBR>;
             bindings = <&mlc_qu>;
+            layers = <_BASE>;
+        };
+
+        combo_GH {
+            timeout-ms = <80>;
+            key-positions = <LTM LTR>;
+            bindings = <&mlc_gh>;
             layers = <_BASE>;
         };
 
@@ -242,14 +249,6 @@
             bindings = <&kp LG(C)>, <&kp LG(V)>, <&kp LG(X)>;
         };
 
-        h_gh: h_gh {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <225>;
-            bindings = <&kp H>, <&mlc_gh>;
-        };
-
-
 // ------------------------- HOLD-TAPS --------------------------------
         /* left-hand HRMs */
         hml: hrm_left {
@@ -341,7 +340,7 @@
 //       |  F  |  V  |  Z  |                |  K  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp C        &kp M       &kp L        &kp W           &kp G  &h_gh        &kp O       &kp U        &kp Y
+   &kp P        &kp C        &kp M       &kp L        &kp W           &kp G  &kp H        &kp O       &kp U        &kp Y
    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B  &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp F        &kp V       &kp Z                               &kp K        &kp X       &kp Q
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
