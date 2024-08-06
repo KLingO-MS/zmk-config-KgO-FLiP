@@ -245,7 +245,7 @@
         h_gh: h_gh {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <225>;
             bindings = <&kp H>, <&mlc_gh>;
         };
 
