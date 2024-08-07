@@ -137,14 +137,14 @@
         };
 
         combo_QU {
-            timeout-ms = <80>;
+            timeout-ms = <150>;
             key-positions =<RBM RBR>;
             bindings = <&mlc_qu>;
             layers = <_BASE>;
         };
 
         combo_GH {
-            timeout-ms = <80>;
+            timeout-ms = <150>;
             key-positions = <LBM LBR>;
             bindings = <&mlc_gh>;
             layers = <_BASE>;
