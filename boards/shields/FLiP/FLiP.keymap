@@ -151,16 +151,16 @@
 
         combo_NAVR {
             timeout-ms = <50>;
-            require-prior-idle-ms = <200>;
-            key-positions = <RMI RMM RHI>;
+            require-prior-idle-ms = <300>;
+            key-positions = <RMP RHI>;
             bindings = <&tog _NAV>;
             layers = <_BASE _SYM _NAV>;
         };
 
         combo_NAVL {
             timeout-ms = <50>;
-            require-prior-idle-ms = <200>;
-            key-positions = <LMI LMM LHI>;
+            require-prior-idle-ms = <300>;
+            key-positions = <LMP LHI>;
             bindings = <&tog _NAV>;
             layers = <_BASE _SYM _NAV>;
         };
@@ -244,19 +244,19 @@
         //     layers = <_BASE>;
         // };
 
-        combo_OULD {
-            timeout-ms = <50>;
-            key-positions = <RTI RTM RTR>;
-            bindings = <&mlc_ould>;
-            layers = <_BASE>;
-        };
+        // combo_OULD {
+        //     timeout-ms = <50>;
+        //     key-positions = <RTI RTM RTR>;
+        //     bindings = <&mlc_ould>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_ARE {
-            timeout-ms = <50>;
-            key-positions = <LTI LTM LTR>;
-            bindings = <&mlc_are>;
-            layers = <_BASE>;
-        };
+        // combo_ARE {
+        //     timeout-ms = <50>;
+        //     key-positions = <LTI LTM LTR>;
+        //     bindings = <&mlc_are>;
+        //     layers = <_BASE>;
+        // };
 
         combo_YOU {
             timeout-ms = <50>;
@@ -539,12 +539,12 @@
 // -------------------------------    -------------------------------
 // |  P  |  C  |  M  |  L  |  W  |    |  G  |  H  |  O  |  U  |  Y  |
 // |  N  |  S  |  T  |  R  |  J  |    |  F  |  D  |  A  |  E  |  I  |
-//       |  B  |  V  |  Z  |                |  K  |  Q  |  X  |
+//       |  B  |  V  |  Z  |                |  K  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
    &kp P        &kp C        &kp M       &kp L        &kp W           &kp G  &kp H        &kp O       &kp U        &kp Y
    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp F  &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp B        &kp V       &kp Z                               &kp K        &kp Q       &kp X
+                &kp B        &kp V       &kp Z                               &kp K        &kp X       &kp Q
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
                         >;
                 };
