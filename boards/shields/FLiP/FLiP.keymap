@@ -74,18 +74,6 @@
                 ;
         };
 
-        mlc_are: macro_lc_are {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp A>
-                , <&kp R>
-                , <&kp E>
-                ;
-        };
-
         mlc_qu: macro_lc_qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -97,16 +85,14 @@
                 ;
         };
 
-        mlc_ould: macro_lc_ould {
+        mlc_gn: macro_lc_gn {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <5>;
             bindings
-                = <&kp O>
-                , <&kp U>
-                , <&kp L>
-                , <&kp D>
+                = <&kp G>
+                , <&kp N>
                 ;
         };
     };
@@ -216,48 +202,6 @@
         // };
 
 // ------------------------- CHARACTER COMBOS --------------------------------
-        // combo_J {
-        //     timeout-ms = <40>;
-        //     key-positions = <RTM RTR>;
-        //     bindings = <&kp J>;
-        //     layers = <_BASE>;
-        // };
-
-        // combo_W {
-        //     timeout-ms = <40>;
-        //     key-positions = <LTM LTR>;
-        //     bindings = <&kp W>;
-        //     layers = <_BASE>;
-        // };
-
-        // combo_G {
-        //     timeout-ms = <40>;
-        //     key-positions = <LMR LMM>;
-        //     bindings = <&kp G>;
-        //     layers = <_BASE>;
-        // };
-
-        // combo_F {
-        //     timeout-ms = <40>;
-        //     key-positions = <RMM RMR>;
-        //     bindings = <&kp F>;
-        //     layers = <_BASE>;
-        // };
-
-        // combo_OULD {
-        //     timeout-ms = <50>;
-        //     key-positions = <RTI RTM RTR>;
-        //     bindings = <&mlc_ould>;
-        //     layers = <_BASE>;
-        // };
-
-        // combo_ARE {
-        //     timeout-ms = <50>;
-        //     key-positions = <LTI LTM LTR>;
-        //     bindings = <&mlc_are>;
-        //     layers = <_BASE>;
-        // };
-
         combo_YOU {
             timeout-ms = <50>;
             key-positions = <RMI RMM RMR>;
@@ -276,6 +220,13 @@
             timeout-ms = <50>;
             key-positions = <RBM RBR>;
             bindings = <&mlc_qu>;
+            layers = <_BASE>;
+        };
+
+        combo_GN {
+            timeout-ms = <50>;
+            key-positions = <LBM LBR>;
+            bindings = <&mlc_gn>;
             layers = <_BASE>;
         };
 
@@ -537,14 +488,14 @@
 
                 base_layer {
 // -------------------------------    -------------------------------
-// |  P  |  C  |  M  |  L  |  W  |    |  G  |  H  |  O  |  U  |  Y  |
-// |  N  |  S  |  T  |  R  |  J  |    |  F  |  D  |  A  |  E  |  I  |
-//       |  B  |  V  |  Z  |                |  K  |  X  |  Q  |
+// |  P  |  C  |  M  |  L  |  W  |    |  F  |  H  |  O  |  U  |  Y  |
+// |  N  |  S  |  T  |  R  |  J  |    |  B  |  D  |  A  |  E  |  I  |
+//       |  G  |  V  |  Z  |                |  K  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp C        &kp M       &kp L        &kp W           &kp G  &kp H        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp F  &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp B        &kp V       &kp Z                               &kp K        &kp X       &kp Q
+   &kp P        &kp C        &kp M       &kp L        &kp W           &kp F  &kp H        &kp O       &kp U        &kp Y
+   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B  &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+                &kp G        &kp V       &kp Z                               &kp K        &kp X       &kp Q
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
                         >;
                 };
