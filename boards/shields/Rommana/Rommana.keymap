@@ -163,7 +163,7 @@
 
         combo_YOU {
             timeout-ms = <50>;
-            key-positions = <RMI RMM RMR>;
+            key-positions = <RTI RTM RTR>;
             bindings = <&mm_you>;
             layers = <_BASE>;
         };
@@ -177,7 +177,7 @@
 
         combo_ING {
             timeout-ms = <150>;
-            key-positions = <LBM LBR>;
+            key-positions = <RMI RMM RMR>;
             bindings = <&mlc_ing>;
             layers = <_BASE>;
         };
