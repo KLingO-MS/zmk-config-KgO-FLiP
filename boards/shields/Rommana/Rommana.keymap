@@ -166,14 +166,14 @@
 
 // ------------------------- CHARACTER COMBOS --------------------------------
         combo_THE {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <LMI LMM LMR>;
             bindings = <&mm_the>;
             layers = <_BASE>;
         };
 
         combo_YOU {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <RMI RMM RMR>;
             bindings = <&mm_you>;
             layers = <_BASE>;
@@ -391,13 +391,13 @@
 
                 base_layer {
 // -------------------------------    -------------------------------
-// |  P  |  C  |  M  |  L  |  W  |    |  F  |  H  |  O  |  U  |  Y  |
-// |  N  |  S  |  T  |  R  |  J  |    |  G  |  D  |  A  |  E  |  I  |
+// |  P  |  C  |  M  |  L  |  W  |    |  F  |  D  |  O  |  U  |  Y  |
+// |  N  |  S  |  T  |  R  |  J  |    |  G  |  H  |  A  |  E  |  I  |
 //       |  B  |  V  |  Z  |                |  K  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp C        &kp M       &kp L        &kp W           &kp F  &kp H        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp G  &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+   &kp P        &kp C        &kp M       &kp L        &kp W           &kp F  &kp D        &kp O       &kp U        &kp Y
+   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp G  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp B        &kp V       &kp Z                               &kp K        &kp X       &kp Q
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
                         >;
@@ -432,16 +432,16 @@
                 };
 
                 btf_layer {
-// -------------------------------    ------------------------------
-// | BT1 | BT2 | BT3 | BT4 | BT5 |    | F1 | F2  | F3  | F4  | F5  |
-// | ALT | CTL | GUI | SFT | USB |    | F6 | F7  | F8  | F9  | F10 |
-// |     |  v. |  v- |  v+ |     |    |    | F11 | F12 | APP |     |
-//                   |     |     |    |    |     |
+// -------------------------------    ----------------------------
+// | BT1 | BT2 | BT3 | BT4 | BT5 |    | F11 | F1 | F2  | F3  | F4 |
+// | ALT | CTL | GUI | SFT | USB |    | F12 | F5 | F6  | F7  | F8 |
+// |     |  v. |  v- |  v+ |     |    |     | F9 | F10 | APP |    |
+//                   |     |     |    |     |    |
                         bindings = <
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp F1 &kp F2  &kp F3  &kp F4    &kp F5       
-   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &out OUT_TOG   &kp F6 &kp F7  &kp F8  &kp F9    &kp F10
-                &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP                       &kp F11 &kp F12 &kp K_APP
-                                                &none   &none         &none  &none
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp F11 &kp F1 &kp F2  &kp F3    &kp F4       
+   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &out OUT_TOG   &kp F12 &kp F5 &kp F6  &kp F7    &kp F8
+                &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP                        &kp F9 &kp F10 &kp K_APP
+                                                &none   &none         &none   &none
                         >;
                 };                
     };
