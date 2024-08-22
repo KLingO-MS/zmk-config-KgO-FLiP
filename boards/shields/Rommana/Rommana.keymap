@@ -186,19 +186,19 @@
             layers = <_BASE>;
         };
 
-        combo_gh {
-            timeout-ms = <150>;
-            key-positions =<RMC RMI>;
-            bindings = <&mlc_gh>;
-            layers = <_BASE>;
-        };
-
-        // combo_ING {
+        // combo_gh {
         //     timeout-ms = <150>;
-        //     key-positions = <RMI RMM RMR>;
-        //     bindings = <&mlc_ing>;
+        //     key-positions =<RMC RMI>;
+        //     bindings = <&mlc_gh>;
         //     layers = <_BASE>;
         // };
+
+        combo_ING {
+            timeout-ms = <150>;
+            key-positions = <RMM RMR RMP>;
+            bindings = <&mlc_ing>;
+            layers = <_BASE>;
+        };
 
 // ------------------------- SYMBOL COMBOS --------------------------------
         combo_LPAR {
@@ -392,13 +392,13 @@
                 base_layer {
 // -------------------------------    -------------------------------
 // |  P  |  C  |  M  |  L  |  W  |    |  F  |  D  |  O  |  U  |  Y  |
-// |  N  |  S  |  T  |  R  |  J  |    |  G  |  H  |  A  |  E  |  I  |
-//       |  B  |  V  |  Z  |                |  K  |  X  |  Q  |
+// |  N  |  S  |  T  |  R  |  J  |    |  B  |  H  |  A  |  E  |  I  |
+//       |  G  |  V  |  Z  |                |  K  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
    &kp P        &kp C        &kp M       &kp L        &kp W           &kp F  &kp D        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp G  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp B        &kp V       &kp Z                               &kp K        &kp X       &kp Q
+   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+                &kp G        &kp V       &kp Z                               &kp K        &kp X       &kp Q
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
                         >;
                 };
