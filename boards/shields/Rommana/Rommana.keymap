@@ -166,15 +166,15 @@
 
 // ------------------------- CHARACTER COMBOS --------------------------------
         combo_THE {
-            timeout-ms = <60>;
+            timeout-ms = <100>;
             key-positions = <LMI LMM LMR>;
             bindings = <&mm_the>;
             layers = <_BASE>;
         };
 
         combo_YOU {
-            timeout-ms = <60>;
-            key-positions = <RMI RMM RMR>;
+            timeout-ms = <150>;
+            key-positions = <RTI RTM RTR>;
             bindings = <&mm_you>;
             layers = <_BASE>;
         };
@@ -194,8 +194,8 @@
         // };
 
         combo_ING {
-            timeout-ms = <150>;
-            key-positions = <RMM RMR RMP>;
+            timeout-ms = <100>;
+            key-positions = <RMI RMM RMR>;
             bindings = <&mlc_ing>;
             layers = <_BASE>;
         };
