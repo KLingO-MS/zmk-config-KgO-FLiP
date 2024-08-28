@@ -134,7 +134,7 @@
 
         combo_BTCLR {
             timeout-ms = <50>;
-            key-positions = <LBR LBI>;
+            key-positions = <LBR LBM LBI>;
             bindings = <&bt BT_CLR>;
             layers = <_BTF>;
         };
@@ -142,7 +142,7 @@
         combo_NAVR {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
-            key-positions = <RMP RHI>;
+            key-positions = <RMP RMC>;
             bindings = <&tog _NAV>;
             layers = <_BASE _SYM _NAV>;
         };
@@ -150,7 +150,7 @@
         combo_NAVL {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
-            key-positions = <LMP LHI>;
+            key-positions = <LMP LMC>;
             bindings = <&tog _NAV>;
             layers = <_BASE _SYM _NAV>;
         };
@@ -391,13 +391,13 @@
 
                 base_layer {
 // -------------------------------    -------------------------------
-// |  P  |  C  |  M  |  L  |  W  |    |  F  |  H  |  O  |  U  |  Y  |
-// |  N  |  S  |  T  |  R  |  J  |    |  B  |  D  |  A  |  E  |  I  |
+// |  P  |  C  |  M  |  L  |  W  |    |  F  |  D  |  O  |  U  |  Y  |
+// |  N  |  S  |  T  |  R  |  J  |    |  B  |  H  |  A  |  E  |  I  |
 //       |  G  |  V  |  Z  |                |  K  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp C        &kp M       &kp L        &kp W           &kp F  &kp H        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B  &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+   &kp P        &kp C        &kp M       &kp L        &kp W           &kp F  &kp D        &kp O       &kp U        &kp Y
+   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp G        &kp V       &kp Z                               &kp K        &kp X       &kp Q
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
                         >;
@@ -405,28 +405,28 @@
 
                 nav_layer {
 // -------------------------------    ---------------------------------
-// | . , |  4  |  5  |  6  | INS |    | pUP | HOME |  UP | END  | ESC |
-// |  0  |  1  |  2  |  3  | PSC |    | pDN | LEFT | SPC | RGHT | RET |
-//       |  7  |  8  |  9  |                | TAB  |  DN | DEL  |
+// |  !  |  "  |  ;  |  :  | INS |    | pUP | HOME |  UP | END  | ESC |
+// |  ?  |  '  |  ,  |  .  | PSC |    | pDN | LEFT | SPC | RGHT | RET |
+//       |  $  |  #  |  @  |                | TAB  |  DN | DEL  |
 //                  | RET | BSPC |    | LSFT | BSPC |
                         bindings = <
-   &kp KP_DOT    &kp N4        &kp N5       &kp N6        &kp INS         &kp PG_UP    &kp HOME        &kp UP          &kp END          &kp ESC
-   &hml LALT N0  &hml LCTRL N1 &hml LGUI N2 &hsl LSHFT N3 &kp PSCRN       &kp PG_DN    &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
-                 &kp N7        &kp N8       &kp N9                                     &kp TAB         &kp DOWN        &kp DEL
-                                                &kp RET   &bst _SYM BSPC  &kp LSHFT    &kp BSPC
+   &kp EXCL        &kp DQT        &kp SEMI        &kp COLON      &kp INS         &kp PG_UP    &kp HOME        &kp UP          &kp END          &kp ESC
+   &hml LALT QMARK &hml LCTRL SQT &hml LGUI COMMA &hsl LSHFT DOT &kp PSCRN       &kp PG_DN    &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
+                   &kp DOLLAR     &kp HASH        &kp AT_SIGN                                 &kp TAB         &kp DOWN        &kp DEL
+                                                  &kp RET        &bst _SYM BSPC  &kp LSHFT    &kp BSPC
                         >;
                 };
                 
                 sym_layer {
 // -------------------------------    -------------------------------
-// |  \  |  |  |  _  |  =  | mCP |    |  ~  |  "  |  ;  |  :  |  !  |
-// |  /  |  *  |  -  |  +  | wCP |    |  `  |  '  |  ,  |  .  |  ?  |
-//       |  &  |  ^  |  %  |                |  @  |  #  |  $  |
+// |  \  |  |  |  _  |  =  | mCP |    |  ~  |  1  |  2  |  3  |  4  |
+// |  /  |  *  |  -  |  +  | wCP |    |  `  |  5  |  6  |  7  |  8  |
+//       |  &  |  ^  |  %  |                |  9  |  0  | . , |
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
-   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &mac_cp       &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
-   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &win_cp       &kp GRAVE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
-                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp HASH        &kp DLLR
+   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &mac_cp       &kp TILDE &kp N1        &kp N2       &kp N3        &kp N4
+   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &win_cp       &kp GRAVE &hsr LSHFT N5 &hmr LGUI N6 &hmr LCTRL N7 &hmr LALT N8
+                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp N9        &kp N0       &kp KP_DOT
                                                           &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
                         >;
                 };
