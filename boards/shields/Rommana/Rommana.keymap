@@ -421,14 +421,14 @@
                 
                 sym_layer {
 // -------------------------------    -------------------------------
-// |  \  |  |  |  _  |  =  |  #  |    |  ~  |  §  |  ;  |  :  |  "  |
+// |  \  |  |  |  _  |  =  |  #  |    |  ~  |  !  |  ;  |  :  |  "  |
 // |  /  |  *  |  -  |  +  |  $  |    |  `  | SPC |  ,  |  .  |  '  |
-//       |  &  |  ^  |  %  |                |  @  |  !  |  ?  |
+//       |  &  |  ^  |  %  |                |  ?  |  @  |  §  |
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
-   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp HASH      &kp TILDE &kp NUBS       &kp SEMI        &kp COLON      &kp DQT
+   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp HASH      &kp TILDE &kp EXCL       &kp SEMI        &kp COLON      &kp DQT
    &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp DLLR      &kp GRAVE &hsr LSHFT SPC &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT SQT
-                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp EXCL        &kp QMARK
+                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp QMARK      &kp AT          &kp NUBS
                                                           &none    &kp BSPC      &kp SPACE &kp BSPC
                         >;
                 };
