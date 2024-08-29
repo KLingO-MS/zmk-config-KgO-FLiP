@@ -406,29 +406,29 @@
                 };
 
                 nan_layer {
-// -------=----------------------------    -------------------------------
-// | PGUP | HOME |  UP  | END  | PGDN |    | INS |  1  |  2  |  3  |  4  |
-// | TAB  | LEFT | DOWN | RGHT | RET  |    | PSC |  5  |  6  |  7  |  8  |
-//        | ESC  | BSPC | DEL  |                 |  9  |  0  |  .  |
-//                      | LSFT | SPC |     | _SYM(SPC) | RET |
+// -----------------------------------    -------------------------------
+// | ESC  | HOME |  UP  | END  | RET |    | INS |  1  |  2  |  3  |  4  |
+// | BSPC | LEFT | DOWN | RGHT | DEL |    | PSC |  5  |  6  |  7  |  8  |
+//        | PGUP | TAB  | PGDN |                |  9  |  0  |  .  |
+//                      | LSFT | SPC |    | _SYM(SPC) | RET |
                         bindings = <
-   &kp PG_UP     &kp HOME        &kp UP         &kp END          &kp PG_DN       &kp INS   &kp N1        &kp N2       &kp N3        &kp N4
-   &hml LALT TAB &hml LCTRL LEFT &hml LGUI DOWN &hsl LSHFT RIGHT &kp RET         &kp PSCRN &hsr LSHFT N5 &hmr LGUI N6 &hmr LCTRL N7 &hmr LALT N8
-                 &kp ESC         &kp BSPC       &kp DEL                                    &kp N9        &kp N0       &kp KP_DOT
-                                                &kp LSHFT        &kp SPC         &spt _SYM SPC      &kp RET
+   &kp ESC        &kp HOME        &kp UP         &kp END          &kp RET         &kp INS   &kp N1        &kp N2       &kp N3        &kp N4
+   &hml LALT BSPC &hml LCTRL LEFT &hml LGUI DOWN &hsl LSHFT RIGHT &kp DEL         &kp PSCRN &hsr LSHFT N5 &hmr LGUI N6 &hmr LCTRL N7 &hmr LALT N8
+                  &kp PG_UP       &kp TAB        &kp PG_DN                                  &kp N9        &kp N0       &kp KP_DOT
+                                                 &kp LSHFT        &kp SPC         &spt _SYM SPC      &kp RET
                         >;
                 };
                 
                 sym_layer {
 // -------------------------------    -------------------------------
-// |  %  |  ^  |  _  |  =  |  |  |    |  ~  |  "  |  ;  |  :  |  !  |
+// |  %  |  ^  |  _  |  =  |  |  |    |  ~  |  §  |  '  |  "  |  !  |
 // |  /  |  *  |  -  |  +  |  \  |    |  `  | SPC |  ,  |  .  |  ?  |
-//       |  &  |  $  |  #  |                |  '  |  @  |  §  |
+//       |  &  |  $  |  #  |                |  @  |  ;  |  :  |
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
-   &kp PERCENT     &kp CARET       &kp UNDER       &kp EQUAL       &kp PIPE      &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
+   &kp PERCENT     &kp CARET       &kp UNDER       &kp EQUAL       &kp PIPE      &kp TILDE &kp NUBS       &kp SQT         &kp DQT        &kp EXCL
    &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp BSLH      &kp GRAVE &hsr LSHFT SPC &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
-                   &kp AMPS        &kp DOLLAR      &kp HASH                                &kp SQT        &kp AT          &kp NUBS
+                   &kp AMPS        &kp DOLLAR      &kp HASH                                &kp AT         &kp SEMI        &kp COLON
                                                           &none    &kp BSPC      &kp SPACE &kp BSPC
                         >;
                 };
