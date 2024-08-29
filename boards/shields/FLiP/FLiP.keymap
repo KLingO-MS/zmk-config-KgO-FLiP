@@ -11,7 +11,7 @@
 #include "keypos_30keys.h"
 
 #define _BASE    0
-#define _NAV     1
+#define _NAN     1
 #define _SYM     2
 #define _BTF     3
 
@@ -106,6 +106,7 @@
 // ------------------------- LAYER COMBOS --------------------------------
         combo_BOOT {
             timeout-ms = <50>;
+            require-prior-idle-ms = <300>;
             key-positions = <LMC LTC>;
             bindings = <&bootloader>;
             layers = <_BTF>;
@@ -115,44 +116,45 @@
             timeout-ms = <50>;
             key-positions = <LHI RHI>;
             bindings = <&mo _BTF>;
-            layers = <_BASE _SYM _NAV>;
+            layers = <_BASE _SYM _NAN>;
         };
 
         combo_BTF2 {
             timeout-ms = <50>;
             key-positions = <LHI LHO>;
             bindings = <&mo _BTF>;
-            layers = <_BASE _SYM _NAV>;
+            layers = <_BASE _SYM _NAN>;
         };
 
         combo_BTF3 {
             timeout-ms = <50>;
             key-positions = <RHO RHI>;
             bindings = <&mo _BTF>;
-            layers = <_BASE _SYM _NAV>;
+            layers = <_BASE _SYM _NAN>;
         };
 
         combo_BTCLR {
             timeout-ms = <50>;
-            key-positions = <LBR LBI>;
+            require-prior-idle-ms = <300>;
+            key-positions = <LBR LBM LBI>;
             bindings = <&bt BT_CLR>;
             layers = <_BTF>;
         };
 
-        combo_NAVR {
+        combo_NANR {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
-            key-positions = <RMP RHI>;
-            bindings = <&tog _NAV>;
-            layers = <_BASE _SYM _NAV>;
+            key-positions = <RMP RMC>;
+            bindings = <&tog _NAN>;
+            layers = <_BASE _SYM _NAN>;
         };
 
-        combo_NAVL {
+        combo_NANL {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
-            key-positions = <LMP LHI>;
-            bindings = <&tog _NAV>;
-            layers = <_BASE _SYM _NAV>;
+            key-positions = <LMP LMC>;
+            bindings = <&tog _NAN>;
+            layers = <_BASE _SYM _NAN>;
         };
 
 // ------------------------- MODS COMBOS --------------------------------
@@ -394,40 +396,40 @@
 // |  P  |  C  |  M  |  L  |  W  |    |  F  |  D  |  O  |  U  |  Y  |
 // |  N  |  S  |  T  |  R  |  J  |    |  B  |  H  |  A  |  E  |  I  |
 //       |  G  |  V  |  Z  |                |  K  |  X  |  Q  |
-//        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
+//        | _SYM(=) | _NAN(BSPC) |    | _SYM(SPC) | _NAN(+) |
                         bindings = <
    &kp P        &kp C        &kp M       &kp L        &kp W           &kp F  &kp D        &kp O       &kp U        &kp Y
    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp G        &kp V       &kp Z                               &kp K        &kp X       &kp Q
-                                     &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
+                                     &bst _SYM EQUAL  &bst _NAN BSPC  &spt _SYM SPACE  &spt _NAN PLUS
                         >;
                 };
 
-                nav_layer {
-// -------------------------------    ---------------------------------
-// | . , |  4  |  5  |  6  | INS |    | pUP | HOME |  UP | END  | ESC |
-// |  0  |  1  |  2  |  3  | PSC |    | pDN | LEFT | SPC | RGHT | RET |
-//       |  7  |  8  |  9  |                | TAB  |  DN | DEL  |
-//                  | RET | BSPC |    | LSFT | BSPC |
+                nan_layer {
+// -----------------------------------    -------------------------------
+// | ESC | BSPC |  UP  | DEL  | PGUP |    | INS |  1  |  2  |  3  |  4  |
+// | TAB | LEFT | DOWN | RGHT | PGDN |    | PSC |  5  |  6  |  7  |  8  |
+//       | HOME | END  | RET  |                 |  9  |  0  |  .  |
+//                      | LSFT | SPC |    | _SYM(SPC) | RET |
                         bindings = <
-   &kp KP_DOT    &kp N4        &kp N5       &kp N6        &kp INS         &kp PG_UP    &kp HOME        &kp UP          &kp END          &kp ESC
-   &hml LALT N0  &hml LCTRL N1 &hml LGUI N2 &hsl LSHFT N3 &kp PSCRN       &kp PG_DN    &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
-                 &kp N7        &kp N8       &kp N9                                     &kp TAB         &kp DOWN        &kp DEL
-                                                &kp RET   &bst _SYM BSPC  &kp LSHFT    &kp BSPC
+   &kp ESC       &kp BSPC        &kp UP         &kp DEL          &kp PG_UP         &kp INS   &kp N1        &kp N2       &kp N3        &kp N4
+   &hml LALT TAB &hml LCTRL LEFT &hml LGUI DOWN &hsl LSHFT RIGHT &kp PG_DN         &kp PSCRN &hsr LSHFT N5 &hmr LGUI N6 &hmr LCTRL N7 &hmr LALT N8
+                 &kp HOME        &kp END        &kp RET                                      &kp N9        &kp N0       &kp KP_DOT
+                                                &kp LSHFT        &kp SPC           &spt _SYM SPC      &kp RET
                         >;
                 };
                 
                 sym_layer {
 // -------------------------------    -------------------------------
-// |  \  |  |  |  _  |  =  | mCP |    |  ~  |  "  |  ;  |  :  |  !  |
-// |  /  |  *  |  -  |  +  | wCP |    |  `  |  '  |  ,  |  .  |  ?  |
-//       |  &  |  ^  |  %  |                |  @  |  #  |  $  |
+// |  \  |  |  |  _  |  =  |  #  |    |  ~  |  !  |  ;  |  :  |  "  |
+// |  /  |  *  |  -  |  +  |  $  |    |  `  | SPC |  ,  |  .  |  '  |
+//       |  &  |  ^  |  %  |                |  ?  |  @  |  §  |
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
-   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &mac_cp       &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
-   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &win_cp       &kp GRAVE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
-                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp HASH        &kp DLLR
-                                                          &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
+   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp HASH      &kp TILDE &kp EXCL       &kp SEMI        &kp COLON      &kp DQT
+   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp DLLR      &kp GRAVE &hsr LSHFT SPC &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT SQT
+                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp QMARK      &kp AT          &kp NUBS
+                                                          &none    &kp BSPC      &kp SPACE &kp BSPC
                         >;
                 };
 
