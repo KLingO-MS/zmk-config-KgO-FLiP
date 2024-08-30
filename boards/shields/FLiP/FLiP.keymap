@@ -11,8 +11,8 @@
 #include "keypos_30keys.h"
 
 #define _BASE    0
-#define _NAN     1
-#define _SYM     2
+#define _NAV     1
+#define _NUM     2
 #define _BTF     3
 
 / {
@@ -106,7 +106,6 @@
 // ------------------------- LAYER COMBOS --------------------------------
         combo_BOOT {
             timeout-ms = <50>;
-            require-prior-idle-ms = <300>;
             key-positions = <LMC LTC>;
             bindings = <&bootloader>;
             layers = <_BTF>;
@@ -116,45 +115,44 @@
             timeout-ms = <50>;
             key-positions = <LHI RHI>;
             bindings = <&mo _BTF>;
-            layers = <_BASE _SYM _NAN>;
+            layers = <_BASE _NUM _NAV>;
         };
 
         combo_BTF2 {
             timeout-ms = <50>;
             key-positions = <LHI LHO>;
             bindings = <&mo _BTF>;
-            layers = <_BASE _SYM _NAN>;
+            layers = <_BASE _NUM _NAV>;
         };
 
         combo_BTF3 {
             timeout-ms = <50>;
             key-positions = <RHO RHI>;
             bindings = <&mo _BTF>;
-            layers = <_BASE _SYM _NAN>;
+            layers = <_BASE _NUM _NAV>;
         };
 
         combo_BTCLR {
             timeout-ms = <50>;
-            require-prior-idle-ms = <300>;
             key-positions = <LBR LBM LBI>;
             bindings = <&bt BT_CLR>;
             layers = <_BTF>;
         };
 
-        combo_NANR {
+        combo_NAVR {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
             key-positions = <RMP RMC>;
-            bindings = <&tog _NAN>;
-            layers = <_BASE _SYM _NAN>;
+            bindings = <&tog _NAV>;
+            layers = <_BASE _NUM _NAV>;
         };
 
-        combo_NANL {
+        combo_NAVL {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
             key-positions = <LMP LMC>;
-            bindings = <&tog _NAN>;
-            layers = <_BASE _SYM _NAN>;
+            bindings = <&tog _NAV>;
+            layers = <_BASE _NUM _NAV>;
         };
 
 // ------------------------- MODS COMBOS --------------------------------
@@ -208,7 +206,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LMM LMI>;
             bindings = <&kp LPAR>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE _NUM>;
         };
 
         combo_RPAR {
@@ -216,7 +214,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RMI RMM>;
             bindings = <&kp RPAR>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE _NUM>;
         };
 
         combo_LBRC {
@@ -224,7 +222,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LTM LTI>;
             bindings = <&kp LBRC>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE _NUM>;
         };
 
         combo_RBRC {
@@ -232,7 +230,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RTI RTM>;
             bindings = <&kp RBRC>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE _NUM>;
         };
 
         combo_LBKT {
@@ -240,7 +238,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LBM LBI>;
             bindings = <&kp LBKT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE _NUM>;
         };
 
         combo_RBKT {
@@ -248,7 +246,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RBI RBM>;
             bindings = <&kp RBKT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE _NUM>;
         };
 
         combo_GT {
@@ -256,7 +254,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RMM RMR>;
             bindings = <&kp GT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE _NUM>;
         };
 
         combo_LT {
@@ -264,7 +262,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LMM LMR>;
             bindings = <&kp LT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE _NUM>;
         };
 
 // ------------------------- UTILITY COMBOS --------------------------------
@@ -396,40 +394,40 @@
 // |  P  |  C  |  M  |  L  |  W  |    |  F  |  D  |  O  |  U  |  Y  |
 // |  N  |  S  |  T  |  R  |  J  |    |  B  |  H  |  A  |  E  |  I  |
 //       |  G  |  V  |  Z  |                |  K  |  X  |  Q  |
-//        | _SYM(=) | _NAN(BSPC) |    | _SYM(SPC) | _NAN(+) |
+//        | _NAV(=) | _NUM(BSPC) |    | _NAV(SPC) | _NUM(+) |
                         bindings = <
    &kp P        &kp C        &kp M       &kp L        &kp W           &kp F  &kp D        &kp O       &kp U        &kp Y
    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp G        &kp V       &kp Z                               &kp K        &kp X       &kp Q
-                                     &bst _SYM EQUAL  &bst _NAN BSPC  &spt _SYM SPACE  &spt _NAN PLUS
+                                     &bst _NAV EQUAL  &bst _NUM BSPC  &spt _NAV SPACE  &spt _NUM PLUS
                         >;
                 };
 
-                nan_layer {
-// -------=----------------------------    -------------------------------
-// | PGUP | HOME |  UP  | END  | PGDN |    | INS |  1  |  2  |  3  |  4  |
-// | TAB  | LEFT | DOWN | RGHT | RET  |    | PSC |  5  |  6  |  7  |  8  |
-//        | ESC  | BSPC | DEL  |                 |  9  |  0  |  .  |
-//                      | LSFT | SPC |     | _SYM(SPC) | RET |
+                nav_layer {
+// -------------------------------    ---------------------------------
+// |  !  |  "  |  ;  |  :  | INS |    | ESC | HOME |  UP | END  | DEL |
+// |  ?  |  '  |  ,  |  .  | PSC |    | TAB | LEFT | SPC | RGHT | RET |
+//       |  $  |  #  |  @  |                | PGUP |  DN | PGDN |
+//                  | RET | BSPC |    | LSFT | BSPC |
                         bindings = <
-   &kp PG_UP     &kp HOME        &kp UP         &kp END          &kp PG_DN       &kp INS   &kp N1        &kp N2       &kp N3        &kp N4
-   &hml LALT TAB &hml LCTRL LEFT &hml LGUI DOWN &hsl LSHFT RIGHT &kp RET         &kp PSCRN &hsr LSHFT N5 &hmr LGUI N6 &hmr LCTRL N7 &hmr LALT N8
-                 &kp ESC         &kp BSPC       &kp DEL                                    &kp N9        &kp N0       &kp KP_DOT
-                                                &kp LSHFT        &kp SPC         &spt _SYM SPC      &kp RET
+   &kp EXCL        &kp DQT        &kp SEMI        &kp COLON      &kp INS         &kp ESC    &kp HOME        &kp UP          &kp END          &kp DEL
+   &hml LALT QMARK &hml LCTRL SQT &hml LGUI COMMA &hsl LSHFT DOT &kp PSCRN       &kp TAB    &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
+                   &kp DOLLAR     &kp HASH        &kp AT_SIGN                               &kp PG_UP       &kp DOWN        &kp PG_DN
+                                                  &kp RET        &bst _NUM BSPC  &kp LSHFT  &kp BSPC
                         >;
                 };
                 
                 sym_layer {
-// -------------------------------    -------------------------------
-// |  %  |  ^  |  _  |  =  |  |  |    |  ~  |  "  |  ;  |  :  |  !  |
-// |  /  |  *  |  -  |  +  |  \  |    |  `  | SPC |  ,  |  .  |  ?  |
-//       |  &  |  $  |  #  |                |  '  |  @  |  §  |
-//                  |     | BSPC |    | SPC | BSPC |
+// -------------------------------    --------------------------------
+// |  \  |  |  |  _  |  =  |  ~  |    |  §   |  1  |  2  |  3  |  4  |
+// |  /  |  *  |  -  |  +  |  `  |    | BSPC |  5  |  6  |  7  |  8  |
+//       |  &  |  ^  |  %  |                 |  9  |  0  | . , |
+//                  |     | BSPC |    | SPC  | BSPC |
                         bindings = <
-   &kp PERCENT     &kp CARET       &kp UNDER       &kp EQUAL       &kp PIPE      &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
-   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp BSLH      &kp GRAVE &hsr LSHFT SPC &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
-                   &kp AMPS        &kp DOLLAR      &kp HASH                                &kp SQT        &kp AT          &kp NUBS
-                                                          &none    &kp BSPC      &kp SPACE &kp BSPC
+   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp TILDE     &kp NUBS  &kp N1        &kp N2       &kp N3        &kp N4
+   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp GRAVE     &kp BSPC  &hsr LSHFT N5 &hmr LGUI N6 &hmr LCTRL N7 &hmr LALT N8
+                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp N9        &kp N0       &kp KP_DOT
+                                                          &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
                         >;
                 };
 
