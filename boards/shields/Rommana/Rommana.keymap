@@ -307,7 +307,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <300>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -320,7 +320,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <300>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -354,7 +354,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <170>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
@@ -364,7 +364,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <170>;
             require-prior-idle-ms = <120>;
             bindings = <&mo>, <&kp>;
