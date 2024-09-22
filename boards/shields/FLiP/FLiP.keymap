@@ -307,7 +307,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <300>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -320,7 +320,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <300>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -354,7 +354,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <170>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
@@ -364,7 +364,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <170>;
             require-prior-idle-ms = <120>;
             bindings = <&mo>, <&kp>;
@@ -391,13 +391,13 @@
 
                 base_layer {
 // -------------------------------    -------------------------------
-// |  P  |  C  |  M  |  L  |  W  |    |  F  |  D  |  O  |  U  |  Y  |
-// |  N  |  S  |  T  |  R  |  J  |    |  B  |  H  |  A  |  E  |  I  |
+// |  P  |  C  |  M  |  L  |  W  |    |  F  |  H  |  O  |  U  |  Y  |
+// |  N  |  S  |  T  |  R  |  J  |    |  B  |  D  |  A  |  E  |  I  |
 //       |  G  |  V  |  Z  |                |  K  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp C        &kp M       &kp L        &kp W           &kp F  &kp D        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+   &kp P        &kp C        &kp M       &kp L        &kp W           &kp F  &kp H        &kp O       &kp U        &kp Y
+   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B  &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp G        &kp V       &kp Z                               &kp K        &kp X       &kp Q
                                      &bst _NAV EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _SYM PLUS
                         >;
@@ -405,28 +405,28 @@
 
                 nav_layer {
 // -------------------------------    ---------------------------------
-// |  5  |  6  |  7  |  8  | INS |    | ESC | HOME |  UP | END  | DEL |
-// |  1  |  2  |  3  |  4  | PSC |    | TAB | LEFT | SPC | RGHT | RET |
-//       | . , |  9  |  0  |                | PGUP |  DN | PGDN |
+// |  5  |  6  |  7  |  8  | INS |    | pUP | HOME |  UP | END  | ESC |
+// |  1  |  2  |  3  |  4  | PSC |    | pDN | LEFT | SPC | RGHT | RET |
+//       | . , |  9  |  0  |                | TAB  |  DN | DEL  |
 //                  | RET | BSPC |    | LSFT | BSPC |
                         bindings = <
-   &kp N5        &kp N6        &kp N7       &kp N8        &kp INS         &kp ESC    &kp HOME        &kp UP          &kp END          &kp DEL
-   &hml LALT N1  &hml LCTRL N2 &hml LGUI N3 &hsl LSHFT N4 &kp PSCRN       &kp TAB    &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
-                 &kp KP_DOT    &kp N9       &kp N0                                   &kp PG_UP       &kp DOWN        &kp PG_DN
+   &kp N5        &kp N6        &kp N7       &kp N8        &kp INS         &kp PG_UP  &kp HOME        &kp UP          &kp END          &kp ESC
+   &hml LALT N1  &hml LCTRL N2 &hml LGUI N3 &hsl LSHFT N4 &kp PSCRN       &kp PG_DN  &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
+                 &kp KP_DOT    &kp N9       &kp N0                                   &kp TAB         &kp DOWN        &kp DEL
                                                 &kp RET   &bst _SYM BSPC  &kp LSHFT  &kp BSPC
                         >;
                 };
                 
                 sym_layer {
 // -------------------------------    -------------------------------
-// |  \  |  |  |  _  |  =  |  `  |    |  ~  |  :  |  :  |  "  |  !  |
-// |  /  |  *  |  -  |  +  |  §  |    |  `  |  ,  |  .  |  '  |  ?  |
+// |  \  |  |  |  _  |  =  |  `  |    |  ~  |  "  |  ;  |  :  |  !  |
+// |  /  |  *  |  -  |  +  |  §  |    |  `  |  '  |  ,  |  .  |  ?  |
 //       |  &  |  ^  |  %  |                |  @  |  #  |  $  |
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
-   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp NUHS      &kp TILDE &kp SEMI         &kp COLON     &kp DQT        &kp EXCL
-   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp NUBS      &kp GRAVE &hsr LSHFT COMMA &hmr LGUI DOT &hmr LCTRL SQT &hmr LALT QMARK
-                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT           &kp HASH      &kp DLLR
+   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp NUHS      &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
+   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp NUBS      &kp GRAVE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
+                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp HASH        &kp DLLR
                                                           &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
                         >;
                 };
