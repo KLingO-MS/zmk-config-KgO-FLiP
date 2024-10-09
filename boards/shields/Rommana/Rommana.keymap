@@ -77,28 +77,28 @@
                 ;
         };
 
-        mlc_gh: macro_lc_gh {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp G>
-                , <&kp H>
-                ;
-        };
+        // mlc_gh: macro_lc_gh {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp G>
+        //         , <&kp H>
+        //         ;
+        // };
 
-        mlc_ing: macro_lc_ing {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp I>
-                , <&kp N>
-                , <&kp G>
-                ;
-        };
+        // mlc_ing: macro_lc_ing {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp I>
+        //         , <&kp N>
+        //         , <&kp G>
+        //         ;
+        // };
     };
 
     combos {
@@ -174,7 +174,7 @@
 
         combo_YOU {
             timeout-ms = <150>;
-            key-positions = <RTI RTM RTR>;
+            key-positions = <RMI RMM RMR>;
             bindings = <&mm_you>;
             layers = <_BASE>;
         };
@@ -193,12 +193,12 @@
         //     layers = <_BASE>;
         // };
 
-        combo_ING {
-            timeout-ms = <100>;
-            key-positions = <RMI RMM RMR>;
-            bindings = <&mlc_ing>;
-            layers = <_BASE>;
-        };
+        // combo_ING {
+        //     timeout-ms = <100>;
+        //     key-positions = <RMI RMM RMR>;
+        //     bindings = <&mlc_ing>;
+        //     layers = <_BASE>;
+        // };
 
 // ------------------------- SYMBOL COMBOS --------------------------------
         combo_LPAR {
@@ -390,6 +390,7 @@
         compatible = "zmk,keymap";
 
                 base_layer {
+                    display-name = "Base";
 // -------------------------------    -------------------------------
 // |  P  |  L  |  M  |  D  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
 // |  N  |  R  |  T  |  H  |  B  |    |  G  |  S  |  A  |  E  |  I  |
@@ -404,6 +405,7 @@
                 };
 
                 nav_layer {
+                    display-name = "Num - Nav";
 // -------------------------------    ---------------------------------
 // |  5  |  6  |  7  |  8  | INS |    | pUP | HOME |  UP | END  | ESC |
 // |  1  |  2  |  3  |  4  | PSC |    | pDN | LEFT | SPC | RGHT | RET |
@@ -418,6 +420,7 @@
                 };
                 
                 sym_layer {
+                    display-name = "Symbols";
 // -------------------------------    -------------------------------
 // |  \  |  |  |  _  |  =  |  `  |    |  ~  |  "  |  ;  |  :  |  !  |
 // |  /  |  *  |  -  |  +  |  §  |    |  `  |  '  |  ,  |  .  |  ?  |
@@ -432,6 +435,7 @@
                 };
 
                 btf_layer {
+                    display-name = "BT - Func";
 // -------------------------------    -----------------------------
 // | BT1 | BT2 | BT3 | BT4 | BT5 |    | F11 | F1 | F2  | F3  | F4 |
 // | ALT | CTL | GUI | SFT | USB |    | F12 | F5 | F6  | F7  | F8 |
@@ -443,6 +447,14 @@
                 &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP                        &kp F9 &kp F10 &kp K_APP
                                                 &none   &none         &none   &none
                         >;
-                };                
+                };
+
+                extra1 {
+                        status = "reserved";
+                };
+
+                extra2 {
+                        status = "reserved";
+                };
     };
 };
