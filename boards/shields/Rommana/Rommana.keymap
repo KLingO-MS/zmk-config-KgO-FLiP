@@ -281,6 +281,15 @@
         //     layers = <_BASE>;
         //     require-prior-idle-ms = <200>;
         // };
+
+        combo_UNLCK {
+            timeout-ms = <40>;
+            key-positions = <LMC LTC>;
+            bindings = <&studio_unlock>;
+            layers = <_BASE>;
+            require-prior-idle-ms = <200>;
+        };
+        
     };
 
     behaviors {
