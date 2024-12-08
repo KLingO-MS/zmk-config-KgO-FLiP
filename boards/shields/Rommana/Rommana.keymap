@@ -88,17 +88,17 @@
         //         ;
         // };
 
-        // mlc_ing: macro_lc_ing {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp I>
-        //         , <&kp N>
-        //         , <&kp G>
-        //         ;
-        // };
+        mlc_mpl: macro_lc_mpl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp M>
+                , <&kp P>
+                , <&kp L>
+                ;
+        };
     };
 
     combos {
@@ -142,7 +142,7 @@
         combo_NAVR {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
-            key-positions = <RMP RMC>;
+            key-positions = <RMI RMM RMR>;
             bindings = <&tog _NAV>;
             layers = <_BASE _SYM _NAV>;
         };
@@ -150,7 +150,7 @@
         combo_NAVL {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
-            key-positions = <LMP LMC>;
+            key-positions = <LMI LMM LMR>;
             bindings = <&tog _NAV>;
             layers = <_BASE _SYM _NAV>;
         };
@@ -165,16 +165,16 @@
         };
 
 // ------------------------- CHARACTER COMBOS --------------------------------
-        combo_THE {
-            timeout-ms = <100>;
-            key-positions = <LMI LMM LMR>;
-            bindings = <&mm_the>;
+        combo_MPL {
+            timeout-ms = <200>;
+            key-positions = <LTP LTR LTM>;
+            bindings = <&mlc_mpl>;
             layers = <_BASE>;
         };
 
         combo_YOU {
-            timeout-ms = <150>;
-            key-positions = <RMI RMM RMR>;
+            timeout-ms = <200>;
+            key-positions = <RTM RTR RTP>;
             bindings = <&mm_you>;
             layers = <_BASE>;
         };
@@ -284,7 +284,7 @@
 
         combo_UNLCK {
             timeout-ms = <40>;
-            key-positions = <LMC LTC>;
+            key-positions = <LMC RMC>;
             bindings = <&studio_unlock>;
             layers = <_BASE>;
             require-prior-idle-ms = <200>;
