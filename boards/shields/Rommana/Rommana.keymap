@@ -380,19 +380,19 @@
         };
 
 // ------------------------- MOD-MORPHS --------------------------------
-        mm_you: mm_you {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mlc_you>, <&muc_you>;
-            mods = <(MOD_LSFT)>;
-        };
+        // mm_you: mm_you {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&mlc_you>, <&muc_you>;
+        //     mods = <(MOD_LSFT)>;
+        // };
 
-        mm_the: mm_the {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mlc_the>, <&muc_the>;
-            mods = <(MOD_LSFT)>;
-        };
+        // mm_the: mm_the {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&mlc_the>, <&muc_the>;
+        //     mods = <(MOD_LSFT)>;
+        // };
     };
 
     keymap {
