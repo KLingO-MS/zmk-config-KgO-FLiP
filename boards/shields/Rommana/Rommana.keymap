@@ -60,17 +60,16 @@
         //         ;
         // };
 
-        // mlc_you: macro_lc_you {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp Y>
-        //         , <&kp O>
-        //         , <&kp U>
-        //         ;
-        // };
+        mlc_ou: macro_ou {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp O>
+                , <&kp U>
+                ;
+        };
 
         mlc_qu: macro_lc_qu {
             compatible = "zmk,behavior-macro";
@@ -178,12 +177,12 @@
         //     layers = <_BASE>;
         // };
 
-        // combo_YOU {
-        //     timeout-ms = <200>;
-        //     key-positions = <RTM RTR RTP>;
-        //     bindings = <&mm_you>;
-        //     layers = <_BASE>;
-        // };
+        combo_OU {
+            timeout-ms = <100>;
+            key-positions = <RTM RTR>;
+            bindings = <&mlc_ou>;
+            layers = <_BASE>;
+        };
 
         combo_QU {
             timeout-ms = <150>;
