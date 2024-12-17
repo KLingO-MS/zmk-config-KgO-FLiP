@@ -178,7 +178,7 @@
         // };
 
         combo_OU {
-            timeout-ms = <120>;
+            timeout-ms = <150>;
             key-positions = <RTM RTR>;
             bindings = <&mlc_ou>;
             layers = <_BASE>;
