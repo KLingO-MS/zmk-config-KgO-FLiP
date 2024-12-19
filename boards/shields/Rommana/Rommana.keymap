@@ -82,16 +82,16 @@
                 ;
         };
 
-        // mlc_gh: macro_lc_gh {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp G>
-        //         , <&kp H>
-        //         ;
-        // };
+        mlc_th: macro_lc_th {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp T>
+                , <&kp H>
+                ;
+        };
 
         // mlc_mpl: macro_lc_mpl {
         //     compatible = "zmk,behavior-macro";
@@ -123,19 +123,19 @@
             layers = <_BASE _SYM _NAV>;
         };
 
-        combo_BTF2 {
-            timeout-ms = <50>;
-            key-positions = <LHI LHO>;
-            bindings = <&mo _BTF>;
-            layers = <_BASE _SYM _NAV>;
-        };
+        // combo_BTF2 {
+        //     timeout-ms = <50>;
+        //     key-positions = <LHI LHO>;
+        //     bindings = <&mo _BTF>;
+        //     layers = <_BASE _SYM _NAV>;
+        // };
 
-        combo_BTF3 {
-            timeout-ms = <50>;
-            key-positions = <RHO RHI>;
-            bindings = <&mo _BTF>;
-            layers = <_BASE _SYM _NAV>;
-        };
+        // combo_BTF3 {
+        //     timeout-ms = <50>;
+        //     key-positions = <RHO RHI>;
+        //     bindings = <&mo _BTF>;
+        //     layers = <_BASE _SYM _NAV>;
+        // };
 
         combo_BTCLR {
             timeout-ms = <50>;
@@ -191,12 +191,12 @@
             layers = <_BASE>;
         };
 
-        // combo_gh {
-        //     timeout-ms = <150>;
-        //     key-positions =<RMC RMI>;
-        //     bindings = <&mlc_gh>;
-        //     layers = <_BASE>;
-        // };
+        combo_TH {
+            timeout-ms = <150>;
+            key-positions =<RMM RMI>;
+            bindings = <&mlc_th>;
+            layers = <_BASE>;
+        };
 
         // combo_ING {
         //     timeout-ms = <100>;
@@ -209,7 +209,7 @@
         combo_LPAR {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <LMM LMI>;
+            key-positions = <LMP LMI>;
             bindings = <&kp LPAR>;
             layers = <_BASE _SYM>;
         };
@@ -217,7 +217,7 @@
         combo_RPAR {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <RMI RMM>;
+            key-positions = <RMI RMP>;
             bindings = <&kp RPAR>;
             layers = <_BASE _SYM>;
         };
@@ -225,7 +225,7 @@
         combo_LBRC {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <LTM LTI>;
+            key-positions = <LMP LTI>;
             bindings = <&kp LBRC>;
             layers = <_BASE _SYM>;
         };
@@ -233,7 +233,7 @@
         combo_RBRC {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <RTI RTM>;
+            key-positions = <RTI RMP>;
             bindings = <&kp RBRC>;
             layers = <_BASE _SYM>;
         };
@@ -241,7 +241,7 @@
         combo_LBKT {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <LBM LBI>;
+            key-positions = <LMP LBI>;
             bindings = <&kp LBKT>;
             layers = <_BASE _SYM>;
         };
@@ -249,7 +249,7 @@
         combo_RBKT {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <RBI RBM>;
+            key-positions = <RBI RMP>;
             bindings = <&kp RBKT>;
             layers = <_BASE _SYM>;
         };
@@ -406,14 +406,14 @@
                 base_layer {
                     display-name = "Base";
 // -------------------------------    -------------------------------
-// |  P  |  L  |  M  |  K  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
-// |  N  |  R  |  T  |  H  |  B  |    |  G  |  S  |  A  |  E  |  I  |
-//       |  J  |  V  |  D  |                |  Z  |  X  |  Q  |
+// |  P  |  L  |  M  |  H  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
+// |  N  |  R  |  T  |  D  |  B  |    |  G  |  S  |  A  |  E  |  I  |
+//       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp L        &kp M       &kp K        &kp F           &kp W  &kp C        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT H &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp J        &kp V       &kp D                               &kp Z        &kp X       &kp Q
+   &kp P        &kp L        &kp M       &kp H        &kp F           &kp W  &kp C        &kp O       &kp U        &kp Y
+   &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT D &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+                &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
