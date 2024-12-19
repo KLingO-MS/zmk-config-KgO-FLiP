@@ -193,7 +193,7 @@
 
         combo_TH {
             timeout-ms = <150>;
-            key-positions =<RMM RMI>;
+            key-positions =<LMM LMI>;
             bindings = <&mlc_th>;
             layers = <_BASE>;
         };
