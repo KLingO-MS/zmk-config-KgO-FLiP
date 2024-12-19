@@ -207,65 +207,65 @@
 
 // ------------------------- SYMBOL COMBOS --------------------------------
         combo_LPAR {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LMP LMI>;
+            key-positions = <LHI LMI>;
             bindings = <&kp LPAR>;
             layers = <_BASE _SYM>;
         };
 
         combo_RPAR {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RMI RMP>;
+            key-positions = <RMI RHI>;
             bindings = <&kp RPAR>;
             layers = <_BASE _SYM>;
         };
 
         combo_LBRC {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LMP LTI>;
+            key-positions = <LMR LHI>;
             bindings = <&kp LBRC>;
             layers = <_BASE _SYM>;
         };
 
         combo_RBRC {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RTI RMP>;
+            key-positions = <RHI RMR>;
             bindings = <&kp RBRC>;
             layers = <_BASE _SYM>;
         };
 
         combo_LBKT {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LMP LBI>;
+            key-positions = <LMM LHI>;
             bindings = <&kp LBKT>;
             layers = <_BASE _SYM>;
         };
 
         combo_RBKT {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RBI RMP>;
+            key-positions = <RHI RMM>;
             bindings = <&kp RBKT>;
             layers = <_BASE _SYM>;
         };
 
         combo_GT {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RMM RMR>;
+            key-positions = <RMP RHI>;
             bindings = <&kp GT>;
             layers = <_BASE _SYM>;
         };
 
         combo_LT {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LMM LMR>;
+            key-positions = <LMP LHI>;
             bindings = <&kp LT>;
             layers = <_BASE _SYM>;
         };
