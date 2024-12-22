@@ -178,21 +178,21 @@
         // };
 
         combo_OU {
-            timeout-ms = <170>;
+            timeout-ms = <185>;
             key-positions = <RTM RTR>;
             bindings = <&mlc_ou>;
             layers = <_BASE>;
         };
 
         combo_QU {
-            timeout-ms = <170>;
+            timeout-ms = <185>;
             key-positions =<RBM RBR>;
             bindings = <&mlc_qu>;
             layers = <_BASE>;
         };
 
         combo_TH {
-            timeout-ms = <170>;
+            timeout-ms = <185>;
             key-positions =<LMM LMI>;
             bindings = <&mlc_th>;
             layers = <_BASE>;
