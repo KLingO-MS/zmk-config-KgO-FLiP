@@ -373,7 +373,7 @@
             hold-trigger-on-release;             // delay positional check until key-release
         };
 
-        asl: hrs_left {
+        asl: aks_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
