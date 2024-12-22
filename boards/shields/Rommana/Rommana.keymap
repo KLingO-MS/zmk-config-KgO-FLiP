@@ -60,38 +60,38 @@
         //         ;
         // };
 
-        mlc_ou: macro_ou {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp O>
-                , <&kp U>
-                ;
-        };
+        // mlc_ou: macro_ou {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp O>
+        //         , <&kp U>
+        //         ;
+        // };
 
-        mlc_qu: macro_lc_qu {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp Q>
-                , <&kp U>
-                ;
-        };
+        // mlc_qu: macro_lc_qu {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp Q>
+        //         , <&kp U>
+        //         ;
+        // };
 
-        mlc_th: macro_lc_th {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp T>
-                , <&kp H>
-                ;
-        };
+        // mlc_th: macro_lc_th {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp T>
+        //         , <&kp H>
+        //         ;
+        // };
 
         // mlc_mpl: macro_lc_mpl {
         //     compatible = "zmk,behavior-macro";
@@ -177,26 +177,26 @@
         //     layers = <_BASE>;
         // };
 
-        combo_OU {
-            timeout-ms = <185>;
-            key-positions = <RTM RTR>;
-            bindings = <&mlc_ou>;
-            layers = <_BASE>;
-        };
+        // combo_OU {
+        //     timeout-ms = <185>;
+        //     key-positions = <RTM RTR>;
+        //     bindings = <&mlc_ou>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_QU {
-            timeout-ms = <185>;
-            key-positions =<RBM RBR>;
-            bindings = <&mlc_qu>;
-            layers = <_BASE>;
-        };
+        // combo_QU {
+        //     timeout-ms = <185>;
+        //     key-positions =<RBM RBR>;
+        //     bindings = <&mlc_qu>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_TH {
-            timeout-ms = <185>;
-            key-positions =<LMM LMI>;
-            bindings = <&mlc_th>;
-            layers = <_BASE>;
-        };
+        // combo_TH {
+        //     timeout-ms = <185>;
+        //     key-positions =<LMM LMI>;
+        //     bindings = <&mlc_th>;
+        //     layers = <_BASE>;
+        // };
 
         // combo_ING {
         //     timeout-ms = <100>;
@@ -298,6 +298,39 @@
     };
 
     behaviors {
+// ----------------------- ADAPTIVE-KEYS ------------------------------- 
+        ak_d: ak_d {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp D>;
+
+            akt_th { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+        };
+
+        ak_h: ak_h {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp H>;
+
+            akt_mp { trigger-keys = <M>; max-prior-idle-ms = <300>; bindings = <&kp P>; };
+        };
+
+        ak_x: ak_x {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp X>;
+
+            akt_qu { trigger-keys = <Q>; max-prior-idle-ms = <300>; bindings = <&kp U>; };
+        };
+
+        ak_o: ak_o {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp O>;
+
+            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <250>; bindings = <&kp BSPC &kp O &kp U>; };
+        };
+
 // ------------------------- TAP-DANCES --------------------------------
         win_cp: win_cp {
             compatible = "zmk,behavior-tap-dance";
@@ -337,6 +370,18 @@
             require-prior-idle-ms = <300>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+        asl: hrs_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <170>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&ak_d>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
         };
 
@@ -411,9 +456,9 @@
 //       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp L        &kp M       &kp H        &kp F           &kp W  &kp C        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT D &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
+   &kp P        &kp L        &kp M       &ak_h        &kp F           &kp W  &kp C        &ak_o       &kp U        &kp Y
+   &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+                &kp J        &kp V       &kp K                               &kp Z        &ak_x       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
@@ -421,13 +466,13 @@
                 nav_layer {
                     display-name = "Num - Nav";
 // -------------------------------    ---------------------------------
-// |  5  |  6  |  7  |  8  | INS |    | pUP | HOME |  UP | END  | ESC |
-// |  1  |  2  |  3  |  4  | PSC |    | pDN | LEFT | SPC | RGHT | RET |
+// |  8  |  6  |  4  |  2  | INS |    | pUP | HOME |  UP | END  | ESC |
+// |  7  |  5  |  3  |  1  | PSC |    | pDN | LEFT | SPC | RGHT | RET |
 //       | . , |  9  |  0  |                | TAB  |  DN | DEL  |
 //                  | RET | BSPC |    | LSFT | BSPC |
                         bindings = <
-   &kp N5        &kp N6        &kp N7       &kp N8        &kp INS         &kp PG_UP  &kp HOME        &kp UP          &kp END          &kp ESC
-   &hml LALT N1  &hml LCTRL N2 &hml LGUI N3 &hsl LSHFT N4 &kp PSCRN       &kp PG_DN  &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
+   &kp N8        &kp N6        &kp N4       &kp N2        &kp INS         &kp PG_UP  &kp HOME        &kp UP          &kp END          &kp ESC
+   &hml LALT N7  &hml LCTRL N5 &hml LGUI N3 &hsl LSHFT N1 &kp PSCRN       &kp PG_DN  &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
                  &kp KP_DOT    &kp N9       &kp N0                                   &kp TAB         &kp DOWN        &kp DEL
                                                 &kp RET   &bst _SYM BSPC  &kp LSHFT  &kp BSPC
                         >;
@@ -436,13 +481,13 @@
                 sym_layer {
                     display-name = "Symbols";
 // -------------------------------    -------------------------------
-// |  \  |  |  |  _  |  =  |  `  |    |  ~  |  "  |  ;  |  :  |  !  |
-// |  /  |  *  |  -  |  +  |  §  |    |  `  |  '  |  ,  |  .  |  ?  |
+// |  \  |  |  |  _  |  =  | F13 |    |  ~  |  "  |  ;  |  :  |  !  |
+// |  /  |  *  |  -  |  +  | F16 |    |  `  |  '  |  ,  |  .  |  ?  |
 //       |  &  |  ^  |  %  |                |  @  |  #  |  $  |
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
-   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp NUHS      &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
-   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp NUBS      &kp GRAVE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
+   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp F13       &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
+   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp F16       &kp GRAVE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
                    &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp HASH        &kp DLLR
                                                           &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
                         >;
@@ -465,16 +510,16 @@
 
                 mouse_layer {
                     display-name = "Mouse";
-// ----------------------------------------    -------------------------------------
-// | B3  | B2     |  SCup  | B1     |     |    |     |   B4  |  Mup  |  B5   |     |
-// | ALT | SCleft | SCdown | SCrght |     |    |     | Mleft | Mdown | Mrght | ALT |
-//       | CTRL   | GUI    | SHIFT  |                | SHIFT | GUI   | CTRL  |
-//                            |     |     |    | B1  | B2 |
+// ----------------------------------    ---------------------------------------
+// |     |      |     |       | F13 |    | SCup | SCleft |  Mup  | SCrght |     |
+// | ALT | CTRL | GUI | SHIFT | F16 |    | SCdn | Mleft  |       | Mrght  | B2  |
+//       |      |     |       |                 |   B4   | Mdown |   B5   |
+//                      |     |     |    |  B1  | B3 |
                         bindings = <
-   &mkp MB3 &mkp MB2       &msc SCRL_UP   &mkp MB1        &none     &none &mkp MB4       &mmv MOVE_UP   &mkp MB5        &none
-   &kp LALT &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &none     &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp LALT
-            &kp LCTRL      &kp LGUI       &kp LSHIFT                      &kp LSHIFT     &kp LGUI       &kp LCTRL
-                                                    &none &none     &mkp MB1 &mkp MB2
+   &none    &none     &none    &none       &kp F13   &msc SCRL_UP   &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &none
+   &kp LALT &kp LCTRL &kp LGUI &kp LSHIFT  &kp F16   &msc SCRL_DOWN &mmv MOVE_LEFT &none          &mmv MOVE_RIGHT &mkp MB2
+            &none     &none    &none                                &mkp MB4       &mmv MOVE_DOWN &mkp MB5
+                                     &none &none     &mkp MB1 &mkp MB3
                         >;
                 };
 
