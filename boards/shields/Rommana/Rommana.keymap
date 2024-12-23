@@ -323,6 +323,7 @@
 
             akt_qu { trigger-keys = <Q>; max-prior-idle-ms = <230>; bindings = <&kp U>; };
             akt_sc { trigger-keys = <S>; max-prior-idle-ms = <230>; bindings = <&kp C>; };
+            akt_zo { trigger-keys = <Z>; max-prior-idle-ms = <230>; bindings = <&kp O>; };
         };
 
         ak_o: ak_o {
@@ -330,7 +331,7 @@
             #binding-cells = <0>;
             bindings = <&kp O>;
 
-            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <200>; bindings = <&none>; };
+            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <200>; bindings = <&kp LSHIFT>; };
         };
 
         ak_u: ak_u {
