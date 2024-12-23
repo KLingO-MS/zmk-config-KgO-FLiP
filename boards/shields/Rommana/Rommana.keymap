@@ -334,6 +334,7 @@
             akt_xe { trigger-keys = <X>; max-prior-idle-ms = <250>; bindings = <&kp E>; };
             akt_zo { trigger-keys = <Z>; max-prior-idle-ms = <250>; bindings = <&kp O>; };
             akt_gs { trigger-keys = <G>; max-prior-idle-ms = <250>; bindings = <&kp S>; };
+            akt_ws { trigger-keys = <W>; max-prior-idle-ms = <250>; bindings = <&kp S>; };
         };
 
         ak_o: ak_o {
