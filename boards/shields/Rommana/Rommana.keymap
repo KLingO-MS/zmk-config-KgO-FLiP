@@ -331,7 +331,7 @@
             #binding-cells = <0>;
             bindings = <&kp O>;
 
-            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <150>; bindings = <&none>; };
+            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <150>; bindings = <&kp LSHIFT>; };
         };
 
         ak_u: ak_u {
