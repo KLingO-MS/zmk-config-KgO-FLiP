@@ -304,8 +304,8 @@
             #binding-cells = <0>;
             bindings = <&kp D>;
 
-            akt_th { trigger-keys = <T>; max-prior-idle-ms = <230>; bindings = <&kp H>; };
-            akt_sh { trigger-keys = <S>; max-prior-idle-ms = <230>; bindings = <&kp H>; };
+            akt_th { trigger-keys = <T>; max-prior-idle-ms = <200>; bindings = <&kp H>; };
+            akt_sh { trigger-keys = <S>; max-prior-idle-ms = <200>; bindings = <&kp H>; };
         };
 
         ak_h: ak_h {
@@ -313,7 +313,7 @@
             #binding-cells = <0>;
             bindings = <&kp H>;
 
-            akt_mp { trigger-keys = <M>; max-prior-idle-ms = <230>; bindings = <&kp P>; };
+            akt_mp { trigger-keys = <M>; max-prior-idle-ms = <200>; bindings = <&kp P>; };
         };
 
         ak_x: ak_x {
@@ -321,9 +321,9 @@
             #binding-cells = <0>;
             bindings = <&kp X>;
 
-            akt_qu { trigger-keys = <Q>; max-prior-idle-ms = <230>; bindings = <&kp U>; };
-            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <230>; bindings = <&kp C>; };
-            akt_zo { trigger-keys = <Z>; max-prior-idle-ms = <230>; bindings = <&kp O>; };
+            akt_qu { trigger-keys = <Q>; max-prior-idle-ms = <200>; bindings = <&kp U>; };
+            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <200>; bindings = <&kp C>; };
+            akt_zo { trigger-keys = <Z>; max-prior-idle-ms = <200>; bindings = <&kp O>; };
         };
 
         ak_o: ak_o {
@@ -331,7 +331,7 @@
             #binding-cells = <0>;
             bindings = <&kp O>;
 
-            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <200>; bindings = <&kp LSHIFT>; };
+            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <150>; bindings = <&kp LSHIFT>; };
         };
 
         ak_u: ak_u {
@@ -339,7 +339,7 @@
             #binding-cells = <0>;
             bindings = <&kp U>;
 
-            akt_uo { trigger-keys = <Y>; max-prior-idle-ms = <230>; bindings = <&kp O &kp U>; };
+            akt_uo { trigger-keys = <Y>; max-prior-idle-ms = <200>; bindings = <&kp O &kp U>; };
         };
 
 // ------------------------- TAP-DANCES --------------------------------
