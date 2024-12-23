@@ -342,6 +342,16 @@
             akt_uo { trigger-keys = <Y>; max-prior-idle-ms = <200>; bindings = <&kp O &kp U>; };
         };
 
+        ak_z: ak_z {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp Z>;
+
+            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <200>; bindings = <&kp C>; };
+            akt_xo { trigger-keys = <X>; max-prior-idle-ms = <200>; bindings = <&kp O>; };
+            akt_que { trigger-keys = <Q>; max-prior-idle-ms = <200>; bindings = <&kp U &kp E>; };
+        };
+
 // ------------------------- TAP-DANCES --------------------------------
         win_cp: win_cp {
             compatible = "zmk,behavior-tap-dance";
