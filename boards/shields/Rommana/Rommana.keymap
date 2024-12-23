@@ -317,6 +317,7 @@
             bindings = <&kp H>;
 
             akt_mp { trigger-keys = <M>; max-prior-idle-ms = <200>; bindings = <&kp P>; };
+            akt_ld { trigger-keys = <L>; max-prior-idle-ms = <200>; bindings = <&kp D>; };
         };
 
         ak_x: ak_x {
