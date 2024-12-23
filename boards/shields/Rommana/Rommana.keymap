@@ -304,7 +304,8 @@
             #binding-cells = <0>;
             bindings = <&kp D>;
 
-            akt_th { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_th { trigger-keys = <T>; max-prior-idle-ms = <230>; bindings = <&kp H>; };
+            akt_sh { trigger-keys = <S>; max-prior-idle-ms = <230>; bindings = <&kp H>; };
         };
 
         ak_h: ak_h {
@@ -312,7 +313,7 @@
             #binding-cells = <0>;
             bindings = <&kp H>;
 
-            akt_mp { trigger-keys = <M>; max-prior-idle-ms = <300>; bindings = <&kp P>; };
+            akt_mp { trigger-keys = <M>; max-prior-idle-ms = <230>; bindings = <&kp P>; };
         };
 
         ak_x: ak_x {
@@ -320,7 +321,8 @@
             #binding-cells = <0>;
             bindings = <&kp X>;
 
-            akt_qu { trigger-keys = <Q>; max-prior-idle-ms = <300>; bindings = <&kp U>; };
+            akt_qu { trigger-keys = <Q>; max-prior-idle-ms = <230>; bindings = <&kp U>; };
+            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <230>; bindings = <&kp C>; };
         };
 
         ak_o: ak_o {
@@ -328,7 +330,15 @@
             #binding-cells = <0>;
             bindings = <&kp O>;
 
-            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <250>; bindings = <&kp BSPC &kp O &kp U>; };
+            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <200>; bindings = <&none>; };
+        };
+
+        ak_u: ak_u {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp U>;
+
+            akt_uo { trigger-keys = <Y>; max-prior-idle-ms = <230>; bindings = <&kp O &kp U>; };
         };
 
 // ------------------------- TAP-DANCES --------------------------------
@@ -456,7 +466,7 @@
 //       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp L        &kp M       &ak_h        &kp F           &kp W  &kp C        &ak_o       &kp U        &kp Y
+   &kp P        &kp L        &kp M       &ak_h        &kp F           &kp W  &kp C        &ak_o       &ak_u        &kp Y
    &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp J        &kp V       &kp K                               &kp Z        &ak_x       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
