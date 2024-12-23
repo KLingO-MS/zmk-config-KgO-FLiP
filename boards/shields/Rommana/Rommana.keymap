@@ -323,6 +323,15 @@
             bindings = <&kp X>;
 
             akt_qu { trigger-keys = <Q>; max-prior-idle-ms = <250>; bindings = <&kp U>; };
+            akt_zu { trigger-keys = <Z>; max-prior-idle-ms = <250>; bindings = <&kp U>; };
+        };
+
+        ak_q: ak_q {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp Q>;
+
+            akt_xe { trigger-keys = <X>; max-prior-idle-ms = <250>; bindings = <&kp E>; };
             akt_zo { trigger-keys = <Z>; max-prior-idle-ms = <250>; bindings = <&kp O>; };
             akt_gs { trigger-keys = <G>; max-prior-idle-ms = <250>; bindings = <&kp S>; };
         };
@@ -348,7 +357,7 @@
             #binding-cells = <0>;
             bindings = <&kp Z>;
 
-            akt_xo { trigger-keys = <X>; max-prior-idle-ms = <250>; bindings = <&kp O>; };
+            akt_xu { trigger-keys = <X>; max-prior-idle-ms = <250>; bindings = <&kp U>; };
             akt_qu { trigger-keys = <Q>; max-prior-idle-ms = <250>; bindings = <&kp U>; };
         };
 
@@ -474,12 +483,12 @@
 // -------------------------------    -------------------------------
 // |  P  |  L  |  M  |  H  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
 // |  N  |  R  |  T  |  D  |  B  |    |  G  |  S  |  A  |  E  |  I  |
-//       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
+//       |  J  |  V  |  K  |                |  Z  |  Q  |  X  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
    &kp P        &kp L        &kp M       &ak_h        &kp F           &kp W  &kp C        &ak_o       &ak_u        &kp Y
    &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp J        &kp V       &kp K                               &ak_z        &ak_x       &kp Q
+                &kp J        &kp V       &kp K                               &ak_z        &ak_q       &ak_x
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
