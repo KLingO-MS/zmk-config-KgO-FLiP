@@ -493,7 +493,7 @@
                         bindings = <
    &kp P        &kp L        &kp M       &kp B        &kp F           &kp W  &kp C        &ak_o       &ak_u        &kp Y
    &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp J        &kp V       &kp K                               &ak_z        &ak_x       &ak_q
+                &kp J        &kp V       &kp K                               &kp Z        &kp X       &ak_q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
