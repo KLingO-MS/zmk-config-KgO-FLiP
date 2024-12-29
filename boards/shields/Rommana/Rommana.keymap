@@ -290,22 +290,6 @@
         };
 
 // ------------------------- UTILITY COMBOS --------------------------------
-        // combo_CP_M {
-        //     timeout-ms = <40>;
-        //     key-positions = <LTR LTM>;
-        //     bindings = <&mac_cp>;
-        //     layers = <_BASE>;
-        //     require-prior-idle-ms = <200>;
-        // };
-
-        // combo_CP_W {
-        //     timeout-ms = <40>;
-        //     key-positions = <LBM LBR>;
-        //     bindings = <&win_cp>;
-        //     layers = <_BASE>;
-        //     require-prior-idle-ms = <200>;
-        // };
-
         combo_UNLCK {
             timeout-ms = <40>;
             key-positions = <LMC RMC>;
@@ -323,13 +307,13 @@
             #binding-cells = <0>;
             bindings = <&kp D>;
 
-            akt_th { trigger-keys = <T>; max-prior-idle-ms = <200>; bindings = <&kp H>; };
+            akt_th { trigger-keys = <T>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
             akt_bh { trigger-keys = <B>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
-            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
-            akt_ch { trigger-keys = <C>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
-            akt_wh { trigger-keys = <W>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
-            akt_sh { trigger-keys = <S>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
-            akt_gh { trigger-keys = <G>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
+            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_ch { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_wh { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_sh { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_gh { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
         };
 
         // ak_h: ak_h {
@@ -386,18 +370,25 @@
         // };
 
 // ------------------------- TAP-DANCES --------------------------------
-        win_cp: win_cp {
+        cp_c: cp_c {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <500>;
-            bindings = <&kp LC(C)>, <&kp LC(V)>, <&kp LC(X)>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LC(C)>, <&kp LG(C)>;
         };
 
-        mac_cp: mac_cp {
+        cp_v: cp_v {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <500>;
-            bindings = <&kp LG(C)>, <&kp LG(V)>, <&kp LG(X)>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LC(V)>, <&kp LG(V)>;
+        };
+
+        cp_x: cp_x {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LC(X)>, <&kp LG(X)>;
         };
 
 // ------------------------- HOLD-TAPS --------------------------------
@@ -550,30 +541,30 @@
                 btf_layer {
                     display-name = "BT - Func";
 // -------------------------------    -----------------------------
-// | BT1 | BT2 | BT3 | BT4 | BT5 |    | F11 | F1 | F2  | F3  | F4 |
-// | ALT | CTL | GUI | SFT | USB |    | F12 | F5 | F6  | F7  | F8 |
-//       |  v. |  v- |  v+ |                | F9 | F10 | APP |
-//                   |     |     |    |     |    |
+// | BT1 | BT2 | BT3 | BT4 | BT5 |    | F12 | F2  | F4 | F6  | F8 |
+// | ALT | CTL | GUI | SFT | USB |    | F11 | F1  | F3 | F5  | F7 |
+//       |  v. |  v- |  v+ |                | F10 | F9 | APP |
+//                   | BR- | BR+ |    |     |     |
                         bindings = <
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp F11 &kp F1 &kp F2  &kp F3    &kp F4       
-   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &out OUT_TOG   &kp F12 &kp F5 &kp F6  &kp F7    &kp F8
-                &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP                        &kp F9 &kp F10 &kp K_APP
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp F12 &kp F2  &kp F4 &kp F6    &kp F8
+   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &out OUT_TOG   &kp F11 &kp F1  &kp F3 &kp F5    &kp F7
+                &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP                        &kp F10 &kp F9 &kp K_APP
                                         &kp C_BRI_DEC &kp C_BRI_INC   &none   &none
                         >;
                 };
 
                 mouse_layer {
                     display-name = "Mouse";
-// ----------------------------------    ---------------------------------------
-// |     |      |     |       | F13 |    | SCup | SCleft |  Mup  | SCrght |     |
-// | ALT | CTRL | GUI | SHIFT | F16 |    | SCdn | Mleft  |       | Mrght  | B2  |
-//       |      |     |       |                 |   B4   | Mdown |   B5   |
-//                      |     |     |    |  B1  | B3 |
+// -------------------------------    ---------------------------------------
+// |     | cut | cpy | pst | F13 |    | SCup | SCleft |  Mup  | SCrght |     |
+// | ALT | CTL | GUI | SFT | F16 |    | SCdn | Mleft  |       | Mrght  | B2  |
+//       |  v. |  v- |  v+ |                 |   B4   | Mdown |   B5   |
+//                   |     |     |    |  B1  | B3 |
                         bindings = <
-   &none    &none     &none    &none       &kp F13   &msc SCRL_UP   &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &none
-   &kp LALT &kp LCTRL &kp LGUI &kp LSHIFT  &kp F16   &msc SCRL_DOWN &mmv MOVE_LEFT &none          &mmv MOVE_RIGHT &mkp MB2
-            &none     &none    &none                                &mkp MB4       &mmv MOVE_DOWN &mkp MB5
-                                     &none &none     &mkp MB1 &mkp MB3
+   &none    &cp_x      &cp_c        &cp_v        &kp F13   &msc SCRL_UP   &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &none
+   &kp LALT &kp LCTRL  &kp LGUI     &kp LSHIFT   &kp F16   &msc SCRL_DOWN &mmv MOVE_LEFT &none          &mmv MOVE_RIGHT &mkp MB2
+            &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP                          &mkp MB4       &mmv MOVE_DOWN &mkp MB5
+                                        &none    &none     &mkp MB1    &mkp MB3
                         >;
                 };
 
