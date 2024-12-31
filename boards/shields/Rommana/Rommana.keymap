@@ -197,18 +197,18 @@
         // };
 
         combo_QU {
-            timeout-ms = <200>;
+            timeout-ms = <250>;
             key-positions =<RBM RBI>;
             bindings = <&mlc_qu>;
             layers = <_BASE>;
         };
 
-        combo_QUA {
-            timeout-ms = <200>;
-            key-positions =<RBM RBI RBR>;
-            bindings = <&mlc_qua>;
-            layers = <_BASE>;
-        };
+        // combo_QUA {
+        //     timeout-ms = <200>;
+        //     key-positions =<RBM RBI RBR>;
+        //     bindings = <&mlc_qua>;
+        //     layers = <_BASE>;
+        // };
 
         // combo_TH {
         //     timeout-ms = <185>;
