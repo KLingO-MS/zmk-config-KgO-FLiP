@@ -128,9 +128,9 @@
         //     layers = <_BTF>;
         // };
 
-        combo_BTF1 {
+        combo_BTF {
             timeout-ms = <50>;
-            key-positions = <LHI RHI>;
+            key-positions = <LHO RHO>;
             bindings = <&mo _BTF>;
             layers = <_BASE _SYM _NAV>;
         };
@@ -228,7 +228,7 @@
         combo_LPAR {
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LHI LMI>;
+            key-positions = <LHO LMI>;
             bindings = <&kp LPAR>;
             layers = <_BASE _SYM>;
         };
@@ -236,7 +236,7 @@
         combo_RPAR {
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RMI RHI>;
+            key-positions = <RMI RHO>;
             bindings = <&kp RPAR>;
             layers = <_BASE _SYM>;
         };
@@ -244,7 +244,7 @@
         combo_LBRC {
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LMR LHI>;
+            key-positions = <LMR LHO>;
             bindings = <&kp LBRC>;
             layers = <_BASE _SYM>;
         };
@@ -252,7 +252,7 @@
         combo_RBRC {
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RHI RMR>;
+            key-positions = <RHO RMR>;
             bindings = <&kp RBRC>;
             layers = <_BASE _SYM>;
         };
@@ -260,7 +260,7 @@
         combo_LBKT {
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LMM LHI>;
+            key-positions = <LMM LHO>;
             bindings = <&kp LBKT>;
             layers = <_BASE _SYM>;
         };
@@ -268,7 +268,7 @@
         combo_RBKT {
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RHI RMM>;
+            key-positions = <RHO RMM>;
             bindings = <&kp RBKT>;
             layers = <_BASE _SYM>;
         };
@@ -276,7 +276,7 @@
         combo_GT {
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RMP RHI>;
+            key-positions = <RMP RHO>;
             bindings = <&kp GT>;
             layers = <_BASE _SYM>;
         };
@@ -284,7 +284,7 @@
         combo_LT {
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LMP LHI>;
+            key-positions = <LMP LHO>;
             bindings = <&kp LT>;
             layers = <_BASE _SYM>;
         };
@@ -499,12 +499,12 @@
 // |  P  |  L  |  M  |  B  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
 // |  N  |  R  |  T  |  D  |  H  |    |  G  |  S  |  A  |  E  |  I  |
 //       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
-//        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
+//        | _SYM(BSPC) | _NAV(=) |    | _SYM(+) | _NAV(SPC) |
                         bindings = <
    &kp P        &kp L        &kp M       &kp B        &kp F           &kp W  &kp C        &ak_o       &ak_u        &kp Y
    &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
-                                     &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
+                             &bst _SYM BSPC &bst _MOUS EQUAL          &spt _BTF PLUS  &spt _NAV SPACE
                         >;
                 };
 
@@ -514,12 +514,12 @@
 // |  8  |  6  |  4  |  2  | INS |    | pUP | HOME |  UP | END  | ESC |
 // |  7  |  5  |  3  |  1  | PSC |    | pDN | LEFT | SPC | RGHT | RET |
 //       | . , |  9  |  0  |                | TAB  |  DN | DEL  |
-//                  | RET | BSPC |    | LSFT | BSPC |
+//                  | BSPC | RET |    | BSPC | LSFT |
                         bindings = <
    &kp N8        &kp N6        &kp N4       &kp N2        &kp INS         &kp PG_UP  &kp HOME        &kp UP          &kp END          &kp ESC
    &hml LALT N7  &hml LCTRL N5 &hml LGUI N3 &hsl LSHFT N1 &kp PSCRN       &kp PG_DN  &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
                  &kp KP_DOT    &kp N9       &kp N0                                   &kp TAB         &kp DOWN        &kp DEL
-                                                &kp RET   &bst _SYM BSPC  &kp LSHFT  &kp BSPC
+                                            &bst _SYM BSPC  &kp RET       &kp BSPC   &kp LSHFT
                         >;
                 };
                 
@@ -529,12 +529,12 @@
 // |  \  |  |  |  _  |  =  | F13 |    |  ~  |  "  |  ;  |  :  |  !  |
 // |  /  |  *  |  -  |  +  | F16 |    |  `  |  '  |  ,  |  .  |  ?  |
 //       |  &  |  ^  |  %  |                |  @  |  #  |  $  |
-//                  |     | BSPC |    | SPC | BSPC |
+//                  | BSPC |     |    | BSPC | SPC |
                         bindings = <
    &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp F13       &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
    &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp F16       &kp GRAVE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
                    &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp HASH        &kp DLLR
-                                                          &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
+                                                         &kp BSPC  &none         &kp BSPC  &spt _NAV SPACE
                         >;
                 };
 
@@ -564,7 +564,7 @@
    &none    &cp_x      &cp_c        &cp_v        &kp F13   &msc SCRL_UP   &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &none
    &kp LALT &kp LCTRL  &kp LGUI     &kp LSHIFT   &kp F16   &msc SCRL_DOWN &mmv MOVE_LEFT &none          &mmv MOVE_RIGHT &mkp MB2
             &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP                          &mkp MB4       &mmv MOVE_DOWN &mkp MB5
-                                        &none    &none     &mkp MB1    &mkp MB3
+                                        &none    &none     &mkp MB3    &mkp MB1
                         >;
                 };
 
