@@ -324,32 +324,37 @@
             akt_ue { trigger-keys = <U>; max-prior-idle-ms = <200>; bindings = <&kp E>; };
         };
 
-        // ak_q: ak_q {
-        //     compatible = "zmk,behavior-adaptive-key";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp Q>;
+        ak_z: ak_z {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp Z>;
 
-        //     akt_qua { trigger-keys = <U>; max-prior-idle-ms = <150>; bindings = <&kp A>; };
-        //     // akt_zu { trigger-keys = <Z>; max-prior-idle-ms = <250>; bindings = <&kp U>; };
-        //     // akt_gs { trigger-keys = <G>; max-prior-idle-ms = <250>; bindings = <&kp S>; };
-        //     // akt_ws { trigger-keys = <W>; max-prior-idle-ms = <250>; bindings = <&kp S>; };
-        // };
+            akt_qua { trigger-keys = <X>; max-prior-idle-ms = <250>; bindings = <&kp BSPC &kp Q &kp U>; };
+        };
+
+        ak_x: ak_x {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp X>;
+
+            akt_qua { trigger-keys = <Z>; max-prior-idle-ms = <250>; bindings = <&kp BSPC &kp Q &kp U>; };
+        };
 
         ak_o: ak_o {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             bindings = <&kp O>;
 
-            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <150>; bindings = <&kp 0>; };
+            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <150>; bindings = <&kp BSPC &kp O &kp U>; };
         };
 
-        ak_u: ak_u {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp U>;
+        // ak_u: ak_u {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp U>;
 
-            akt_you { trigger-keys = <Y>; max-prior-idle-ms = <250>; bindings = <&kp O &kp U>; };
-        };
+        //     akt_you { trigger-keys = <Y>; max-prior-idle-ms = <250>; bindings = <&kp O &kp U>; };
+        // };
 
         ak_b: ak_b {
             compatible = "zmk,behavior-adaptive-key";
@@ -491,9 +496,9 @@
 //       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp L        &kp M       &ak_b        &kp F           &kp W  &kp C        &ak_o       &ak_u        &ak_y
+   &kp P        &kp L        &kp M       &ak_b        &kp F           &kp W  &kp C        &ak_o       &kp U        &ak_y
    &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
+                &kp J        &kp V       &kp K                               &ak_z        &ak_x       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
