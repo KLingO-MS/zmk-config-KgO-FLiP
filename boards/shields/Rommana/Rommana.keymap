@@ -361,13 +361,13 @@
             akt_you { trigger-keys = <Y>; max-prior-idle-ms = <250>; bindings = <&kp O &kp U>; };
         };
 
-        // ak_z: ak_z {
-        //     compatible = "zmk,behavior-adaptive-key";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp Z>;
+        ak_b: ak_b {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp B>;
 
-        //     akt_xa { trigger-keys = <X>; max-prior-idle-ms = <250>; bindings = <&kp U>; };
-        // };
+            akt_SC { trigger-keys = <S>; max-prior-idle-ms = <250>; bindings = <&kp C>; };
+        };
 
 // ------------------------- TAP-DANCES --------------------------------
         cp_c: cp_c {
@@ -501,7 +501,7 @@
 //       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp L        &kp M       &kp B        &kp F           &kp W  &kp C        &ak_o       &ak_u        &kp Y
+   &kp P        &kp L        &kp M       &ak_b        &kp F           &kp W  &kp C        &ak_o       &ak_u        &kp Y
    &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
