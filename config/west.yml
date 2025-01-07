@@ -13,5 +13,7 @@ manifest:
       import: app/west.yml
     - name: zmk-adaptive-key
       remote: urob
+#    - name: zmk-leader-key
+#      remote: urob
   self:
     path: config
