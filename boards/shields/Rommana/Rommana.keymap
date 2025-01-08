@@ -71,16 +71,16 @@
         //         ;
         // };
 
-        // mlc_qu: macro_lc_qu {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp Q>
-        //         , <&kp U>
-        //         ;
-        // };
+        mlc_qu: macro_lc_qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp Q>
+                , <&kp U>
+                ;
+        };
 
         // mlc_qua: macro_lc_qua {
         //     compatible = "zmk,behavior-macro";
@@ -196,12 +196,12 @@
         //     layers = <_BASE>;
         // };
 
-        // combo_QU {
-        //     timeout-ms = <250>;
-        //     key-positions =<RBM RBI>;
-        //     bindings = <&mlc_qu>;
-        //     layers = <_BASE>;
-        // };
+        combo_QU {
+            timeout-ms = <250>;
+            key-positions =<RBM RBI>;
+            bindings = <&mlc_qu>;
+            layers = <_BASE>;
+        };
 
         // combo_QUA {
         //     timeout-ms = <200>;
@@ -321,47 +321,47 @@
             #binding-cells = <0>;
             bindings = <&kp Y>;
 
-            akt_ue { trigger-keys = <U>; max-prior-idle-ms = <200>; bindings = <&kp E>; };
+            akt_ue { trigger-keys = <U>; max-prior-idle-ms = <250>; bindings = <&kp E>; };
         };
 
-        ak_z: ak_z {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp Z>;
+        // ak_z: ak_z {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp Z>;
 
-            akt_qua { trigger-keys = <X>; max-prior-idle-ms = <250>; bindings = <&kp BSPC &kp Q &kp U>; };
-        };
+        //     akt_qua { trigger-keys = <X>; max-prior-idle-ms = <250>; bindings = <&kp BSPC &kp Q &kp U>; };
+        // };
 
-        ak_x: ak_x {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp X>;
+        // ak_x: ak_x {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp X>;
 
-            akt_qua { trigger-keys = <Z>; max-prior-idle-ms = <250>; bindings = <&kp BSPC &kp Q &kp U>; };
-        };
+        //     akt_qua { trigger-keys = <Z>; max-prior-idle-ms = <250>; bindings = <&kp BSPC &kp Q &kp U>; };
+        // };
 
         ak_o: ak_o {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             bindings = <&kp O>;
 
-            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <150>; bindings = <&kp BSPC &kp O &kp U>; };
+            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <130>; bindings = <&kp 0>; };
         };
 
-        // ak_u: ak_u {
-        //     compatible = "zmk,behavior-adaptive-key";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp U>;
+        ak_u: ak_u {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp U>;
 
-        //     akt_you { trigger-keys = <Y>; max-prior-idle-ms = <250>; bindings = <&kp O &kp U>; };
-        // };
+            akt_you { trigger-keys = <Y>; max-prior-idle-ms = <250>; bindings = <&kp O &kp U>; };
+        };
 
         ak_b: ak_b {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             bindings = <&kp B>;
 
-            akt_SC { trigger-keys = <S>; max-prior-idle-ms = <200>; bindings = <&kp C>; };
+            akt_SC { trigger-keys = <S>; max-prior-idle-ms = <250>; bindings = <&kp C>; };
         };
 
 // ------------------------- TAP-DANCES --------------------------------
@@ -496,9 +496,9 @@
 //       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp L        &kp M       &ak_b        &kp F           &kp W  &kp C        &ak_o       &kp U        &ak_y
+   &kp P        &kp L        &kp M       &ak_b        &kp F           &kp W  &kp C        &ak_o       &ak_u        &ak_y
    &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp J        &kp V       &kp K                               &ak_z        &ak_x       &kp Q
+                &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
