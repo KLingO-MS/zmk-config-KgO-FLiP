@@ -309,7 +309,7 @@
 
             akt_th { trigger-keys = <T>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
             akt_bh { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
-            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_pr { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
             akt_ch { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_wh { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_sh { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
@@ -321,27 +321,37 @@
             #binding-cells = <0>;
             bindings = <&kp B>;
 
-            akt_uo { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
+            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
+            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
         };
 
-        ak_j: ak_j {
+        ak_r: ak_r {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            bindings = <&kp J>;
+            bindings = <&kp R>;
 
-            akt_ws { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
-            akt_gs { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
-            akt_rl { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
+            akt_ng { trigger-keys = <N>; max-prior-idle-ms = <300>; bindings = <&kp G>; };
         };
 
-        ak_x: ak_x {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp X>;
 
-            akt_rl { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
-            akt_kd { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp D>; };
-        };
+        // ak_j: ak_j {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp J>;
+
+        //     akt_ws { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
+        //     akt_gs { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
+        //     akt_rl { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
+        // };
+
+        // ak_x: ak_x {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp X>;
+
+        //     akt_rl { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
+        //     akt_kd { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp D>; };
+        // };
 
         ak_o: ak_o {
             compatible = "zmk,behavior-adaptive-key";
@@ -367,13 +377,13 @@
             akt_uo { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>; };
         };
 
-        ak_z: ak_z {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp Z>;
+        // ak_z: ak_z {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp Z>;
 
-            akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
-        };
+        //     akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
+        // };
 
 // ------------------------- TAP-DANCES --------------------------------
         cp_c: cp_c {
@@ -421,6 +431,18 @@
             require-prior-idle-ms = <300>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+        rml: akr_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <170>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <250>;
+            bindings = <&kp>, <&ak_r>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
         };
 
@@ -508,8 +530,8 @@
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
    &kp P        &kp L        &kp M       &ak_b        &kp F           &kp W  &kp C        &ak_o       &ak_u        &ak_y
-   &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &ak_j        &kp V       &kp K                               &ak_z        &ak_x       &kp Q
+   &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+                &ak_j        &kp V       &kp K                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
