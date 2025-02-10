@@ -156,26 +156,26 @@
             layers = <_BTF>;
         };
 
-        combo_NAVR {
-            timeout-ms = <50>;
-            require-prior-idle-ms = <300>;
-            key-positions = <RMI RMM RMR>;
-            bindings = <&tog _NAV>;
-            layers = <_BASE _SYM _NAV>;
-        };
+        // combo_NAVR {
+        //     timeout-ms = <50>;
+        //     require-prior-idle-ms = <300>;
+        //     key-positions = <RMI RMM RMR>;
+        //     bindings = <&tog _NAV>;
+        //     layers = <_BASE _SYM _NAV>;
+        // };
 
-        combo_NAVL {
-            timeout-ms = <50>;
-            require-prior-idle-ms = <300>;
-            key-positions = <LMI LMM LMR>;
-            bindings = <&tog _NAV>;
-            layers = <_BASE _SYM _NAV>;
-        };
+        // combo_NAVL {
+        //     timeout-ms = <50>;
+        //     require-prior-idle-ms = <300>;
+        //     key-positions = <LMI LMM LMR>;
+        //     bindings = <&tog _NAV>;
+        //     layers = <_BASE _SYM _NAV>;
+        // };
 
 // ------------------------- MODS COMBOS --------------------------------
         combo_CAPS {
             timeout-ms = <50>;
-            key-positions = <LMI RMI>;
+            key-positions = <LTI RTI>;
             bindings = <&caps_word>;
             require-prior-idle-ms = <200>;
             layers = <_BASE>;
@@ -190,14 +190,14 @@
         // };
 
         // combo_OU {
-        //     timeout-ms = <200>;
+        //     timeout-ms = <250>;
         //     key-positions = <RTM RTR>;
         //     bindings = <&mlc_ou>;
         //     layers = <_BASE>;
         // };
 
         combo_QU {
-            timeout-ms = <250>;
+            timeout-ms = <300>;
             key-positions =<RBM RBI>;
             bindings = <&mlc_qu>;
             layers = <_BASE>;
@@ -321,25 +321,17 @@
             #binding-cells = <0>;
             bindings = <&kp B>;
 
-            akt_uo { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
+            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
+            akt_pr { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
+            akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
         };
 
-        ak_j: ak_j {
+        ak_r: ak_r {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            bindings = <&kp J>;
+            bindings = <&kp R>;
 
-            akt_ws { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
-            akt_gs { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
-        };
-
-        ak_x: ak_x {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp X>;
-
-            akt_rl { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
-            akt_kd { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp D>; };
+            akt_ng { trigger-keys = <N>; max-prior-idle-ms = <300>; bindings = <&kp G>; };
         };
 
         ak_o: ak_o {
@@ -363,16 +355,16 @@
             #binding-cells = <0>;
             bindings = <&kp Y>;
 
-            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>; };
+            akt_ue { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>; };
         };
 
-        ak_z: ak_z {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp Z>;
+        // ak_z: ak_z {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp Z>;
 
-            akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
-        };
+        //     akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
+        // };
 
 // ------------------------- TAP-DANCES --------------------------------
         cp_c: cp_c {
@@ -420,6 +412,18 @@
             require-prior-idle-ms = <300>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+        rml: akr_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <170>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <250>;
+            bindings = <&kp>, <&ak_r>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
         };
 
@@ -507,8 +511,8 @@
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
    &kp P        &kp L        &kp M       &ak_b        &kp F           &kp W  &kp C        &ak_o       &ak_u        &ak_y
-   &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &ak_j        &kp V       &kp K                               &ak_z        &ak_x       &kp Q
+   &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+                &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
@@ -546,14 +550,14 @@
                 btf_layer {
                     display-name = "BT - Func";
 // -------------------------------    -----------------------------
-// | BT1 | BT2 | BT3 | BT4 | BT5 |    | F12 | F2  | F4 | F6  | F8 |
-// | ALT | CTL | GUI | SFT | USB |    | F11 | F1  | F3 | F5  | F7 |
-//       |  v. |  v- |  v+ |                | F10 | F9 | APP |
+// | BT1 | BT2 | BT3 | BT4 | BT5 |    | F11 | F1 | F2  | F3  | F4 |
+// | ALT | CTL | GUI | SFT | USB |    | F12 | F5 | F6  | F7  | F8 |
+//       |  v. |  v- |  v+ |                | F9 | F10 | APP |
 //                   | BR- | BR+ |    |     |     |
                         bindings = <
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp F12 &kp F2  &kp F4 &kp F6    &kp F8
-   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &out OUT_TOG   &kp F11 &kp F1  &kp F3 &kp F5    &kp F7
-                &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP                        &kp F10 &kp F9 &kp K_APP
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp F11 &kp F1  &kp F2  &kp F3    &kp F4
+   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &out OUT_TOG   &kp F12 &kp F5  &kp F6  &kp F7    &kp F8
+                &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP                        &kp F9  &kp F10 &kp K_APP
                                         &kp C_BRI_DEC &kp C_BRI_INC   &none   &none
                         >;
                 };
