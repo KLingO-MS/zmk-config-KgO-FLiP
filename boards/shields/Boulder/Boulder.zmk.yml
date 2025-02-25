@@ -1,11 +1,11 @@
 file_format: "1"
-id: Rommana
-name: Rommana
+id: Boulder
+name: Boulder
 type: shield
-url: Rommana
+url: Boulder
 requires: [pro_micro]
 features:
   - keys
 siblings:
-  - Rommana_left
-  - Rommana_right
+  - Boulder_left
+  - Boulder_right

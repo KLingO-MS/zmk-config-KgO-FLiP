@@ -1,0 +1,8 @@
+# Copyright (c) 2021 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_BOULDER_LEFT
+    def_bool $(shields_list_contains,Boulder_left)
+
+config SHIELD_BOULDER_RIGHT
+    def_bool $(shields_list_contains,Boulder_right)
