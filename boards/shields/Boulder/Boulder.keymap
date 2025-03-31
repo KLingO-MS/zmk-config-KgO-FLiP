@@ -556,7 +556,7 @@
 //                   | BR- | BR+ |    |     |     |
                         bindings = <
    &bt BT_SEL 0        &bt BT_SEL 1         &bt BT_SEL 2       &bt BT_SEL 3          &bt BT_SEL 4   &kp F11 &kp F5  &kp F6  &kp F7    &kp F8
-   &hml LALT C_BRI_DEC &hml LCTRL C_BRI_INC &mhl LGUI C_VOL_DN &hsl LSHFT C_VOL_UP   &out OUT_TOG   &kp F12 &kp F1  &kp F2  &kp F3    &kp F4
+   &hml LALT C_BRI_DEC &hml LCTRL C_BRI_INC &hml LGUI C_VOL_DN &hsl LSHFT C_VOL_UP   &out OUT_TOG   &kp F12 &kp F1  &kp F2  &kp F3    &kp F4
                        &cp_x                &cp_c              &cp_v                                        &kp F9  &kp F10 &kp K_APP
                                                                      &none   &none   &none   &none
                         >;
