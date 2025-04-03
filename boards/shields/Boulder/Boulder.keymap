@@ -308,7 +308,7 @@
             bindings = <&kp D>;
 
             akt_th { trigger-keys = <T>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
-            akt_bh { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            // akt_bh { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             // akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_ch { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_wh { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
