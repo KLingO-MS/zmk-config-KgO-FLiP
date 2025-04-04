@@ -314,7 +314,7 @@
             akt_gh { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
 
-            akt_bn { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp N>; };
+            // akt_bn { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp N>; };
         };
 
         ak_b: ak_b {
@@ -489,13 +489,13 @@
                 base_layer {
                     display-name = "Base";
 // -------------------------------    -------------------------------
-// |  B  |  L  |  M  |  P  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
-// |  N  |  R  |  T  |  D  |  H  |    |  G  |  S  |  A  |  E  |  I  |
+// |  P  |  B  |  L  |  M  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
+// |  N  |  T  |  R  |  D  |  H  |    |  G  |  S  |  A  |  E  |  I  |
 //       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &ak_b        &kp L        &kp M       &ak_p        &kp F           &kp W  &kp C        &kp O       &kp U        &ak_y
-   &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+   &kp P        &ak_b        &kp L       &kp M        &kp F           &kp W  &kp C        &kp O       &kp U        &ak_y
+   &hml LALT N  &hml LCTRL T &rml LGUI R &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
