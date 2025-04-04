@@ -341,7 +341,7 @@
             bindings = <&kp P>;
 
             akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
-            // akt_br { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
+            akt_bn { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp N>; };
         };
 
         // ak_u: ak_u {
