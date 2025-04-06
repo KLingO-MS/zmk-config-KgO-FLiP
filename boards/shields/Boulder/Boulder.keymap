@@ -298,6 +298,12 @@
             require-prior-idle-ms = <200>;
         };
         
+        combo_MUTE {
+            timeout-ms = <50>;
+            key-positions = <LMI LMM>;
+            bindings = <&kp C_MUTE>;
+            layers = <_BTF>;
+        };
     };
 
     behaviors {
