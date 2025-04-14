@@ -203,19 +203,19 @@
             layers = <_BASE>;
         };
 
-        // combo_QUA {
-        //     timeout-ms = <200>;
-        //     key-positions =<RBM RBI RBR>;
-        //     bindings = <&mlc_qua>;
-        //     layers = <_BASE>;
-        // };
+        combo_Q {
+            timeout-ms = <50>;
+            key-positions =<LTI LTM>;
+            bindings = <&kp Q>;
+            layers = <_BASE>;
+        };
 
-        // combo_TH {
-        //     timeout-ms = <185>;
-        //     key-positions =<LMM LMI>;
-        //     bindings = <&mlc_th>;
-        //     layers = <_BASE>;
-        // };
+        combo_X {
+            timeout-ms = <50>;
+            key-positions =<LBM LBI>;
+            bindings = <&kp X>;
+            layers = <_BASE>;
+        };
 
         // combo_ING {
         //     timeout-ms = <100>;
