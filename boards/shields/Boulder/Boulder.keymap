@@ -203,19 +203,19 @@
             layers = <_BASE>;
         };
 
-        combo_Q {
-            timeout-ms = <50>;
-            key-positions =<LTI LTM>;
-            bindings = <&kp Q>;
-            layers = <_BASE>;
-        };
+        // combo_Q {
+        //     timeout-ms = <50>;
+        //     key-positions =<LTI LTM>;
+        //     bindings = <&kp Q>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_X {
-            timeout-ms = <50>;
-            key-positions =<LBM LBI>;
-            bindings = <&kp X>;
-            layers = <_BASE>;
-        };
+        // combo_X {
+        //     timeout-ms = <50>;
+        //     key-positions =<LBM LBI>;
+        //     bindings = <&kp X>;
+        //     layers = <_BASE>;
+        // };
 
         // combo_ING {
         //     timeout-ms = <100>;
@@ -347,6 +347,8 @@
             akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
             akt_br { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
             akt_cr { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
+            akt_ws { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
+            akt_gs { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
         };
 
         ak_y: ak_y {
