@@ -203,17 +203,17 @@
             layers = <_BASE>;
         };
 
-        // combo_QUA {
-        //     timeout-ms = <200>;
-        //     key-positions =<RBM RBI RBR>;
-        //     bindings = <&mlc_qua>;
+        // combo_Q {
+        //     timeout-ms = <50>;
+        //     key-positions =<LTI LTM>;
+        //     bindings = <&kp Q>;
         //     layers = <_BASE>;
         // };
 
-        // combo_TH {
-        //     timeout-ms = <185>;
-        //     key-positions =<LMM LMI>;
-        //     bindings = <&mlc_th>;
+        // combo_X {
+        //     timeout-ms = <50>;
+        //     key-positions =<LBM LBI>;
+        //     bindings = <&kp X>;
         //     layers = <_BASE>;
         // };
 
@@ -298,6 +298,12 @@
             require-prior-idle-ms = <200>;
         };
         
+        combo_MUTE {
+            timeout-ms = <50>;
+            key-positions = <LMI LMM>;
+            bindings = <&kp C_MUTE>;
+            layers = <_BTF>;
+        };
     };
 
     behaviors {
@@ -340,6 +346,9 @@
 
             akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
             akt_br { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
+            akt_cr { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
+            akt_ws { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
+            akt_gs { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
         };
 
         ak_y: ak_y {
@@ -519,8 +528,8 @@
                 sym_layer {
                     display-name = "Symbols";
 // -------------------------------    -------------------------------
-// |  \  |  |  |  _  |  =  | F16 |    |  `  |  "  |  ;  |  :  |  !  |
-// |  /  |  *  |  -  |  +  | F13 |    |  ~  |  '  |  ,  |  .  |  ?  |
+// |  \  |  |  |  _  |  =  | F16 |    |  ~  |  "  |  ;  |  :  |  !  |
+// |  /  |  *  |  -  |  +  | F13 |    |  `  |  '  |  ,  |  .  |  ?  |
 //       |  &  |  ^  |  %  |                |  @  |  #  |  $  |
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
@@ -535,8 +544,8 @@
                     display-name = "BT - Func";
 // -------------------------------    -----------------------------
 // | BT1 | BT2 | BT3 | BT4 | BT5 |    | F11 | F1 | F2  | F3  | F4 |
-// | ALT | CTL | GUI | SFT | USB |    | F12 | F5 | F6  | F7  | F8 |
-//       |  v. |  v- |  v+ |                | F9 | F10 | APP |
+// | BR- | BR+ | VL- | VL+ | USB |    | F12 | F5 | F6  | F7  | F8 |
+//       | cut | cpy | pst |                | F9 | F10 | APP |
 //                   | BR- | BR+ |    |     |     |
                         bindings = <
    &bt BT_SEL 0        &bt BT_SEL 1         &bt BT_SEL 2       &bt BT_SEL 3          &bt BT_SEL 4   &kp F11 &kp F1  &kp F2  &kp F3    &kp F4
