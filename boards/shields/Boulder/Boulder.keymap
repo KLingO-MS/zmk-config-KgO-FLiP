@@ -321,6 +321,7 @@
             bindings = <&kp B>;
 
             akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
+            akt_pt { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp T>; };
         };
 
         ak_r: ak_r {
