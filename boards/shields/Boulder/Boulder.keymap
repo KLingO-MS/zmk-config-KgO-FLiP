@@ -490,12 +490,12 @@
                 base_layer {
                     display-name = "Base";
 // -------------------------------    -------------------------------
-// |  B  |  P  |  L  |  M  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
+// |  P  |  B  |  L  |  M  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
 // |  N  |  T  |  R  |  D  |  H  |    |  G  |  S  |  A  |  E  |  I  |
 //       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &ak_b        &ak_p        &kp L       &kp M        &kp F           &kp W  &kp C        &kp O       &kp U        &ak_y
+   &ak_p        &ak_b        &kp L       &kp M        &kp F           &kp W  &kp C        &kp O       &kp U        &ak_y
    &hml LALT N  &hml LCTRL T &rml LGUI R &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
