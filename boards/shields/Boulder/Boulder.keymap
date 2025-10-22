@@ -17,7 +17,7 @@
 
 #define _BASE    0
 #define _NAV     1
-#define _SYM     2
+#define _NUM     2
 #define _BTF     3
 #define _MOUS    4
 
@@ -508,37 +508,37 @@
    &ak_b        &kp L        &kp M       &ak_p        &kp F           &kp W  &kp C        &kp O       &kp U        &ak_y
    &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
-                                     &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
+                                     &bst _MOUS EQUAL  &bst _NAV BSPC  &spt _NUM SPACE  &spt _BTF PLUS
                         >;
                 };
 
                 nav_layer {
-                    display-name = "Num - Nav";
-// -------------------------------    ---------------------------------
-// |  8  |  7  |  6  |  5  | INS |    | pUP | HOME |  UP | END  | ESC |
-// |  4  |  3  |  2  |  1  | PSC |    | pDN | LEFT | SPC | RGHT | RET |
-//       | . , |  9  |  0  |                | TAB  |  DN | DEL  |
-//                  | RET | BSPC |    | LSFT | BSPC |
+                    display-name = "Nav";
+// ----------------------------------    -------------------------------
+// | ESC | HOME |  UP |  END | PGUP |    | INS |  !  |  ;  |  :  |  "  |
+// | TAB | LEFT | RET | RGHT | PGDN |    | PSC |  ?  |  ,  |  .  |  '  |
+//       | BSPC | DWN |  DEL |                 |  =  |  +  |  @  |
+//                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
-   &kp N8        &kp N7        &kp N6       &kp N5        &kp INS         &kp PG_UP  &kp HOME        &kp UP          &kp END          &kp ESC
-   &hml LALT N4  &hml LCTRL N3 &hml LGUI N2 &hsl LSHFT N1 &kp PSCRN       &kp PG_DN  &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
-                 &kp KP_DOT    &kp N9       &kp N0                                   &kp TAB         &kp DOWN        &kp DEL
-                                                &kp RET   &bst _SYM BSPC  &kp LSHFT  &kp BSPC
+   &kp ESC       &kp HOME        &kp UP        &kp END          &kp PG_UP      &kp INS   &kp EXCL         &kp SEMI        &kp COLON      &kp DQT
+   &hml LALT TAB &hml LCTRL LEFT &hml LGUI RET &hsl LSHFT RIGHT &kp PG_DN      &kp PSCRN &hsr LSHFT QMARK &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT SQT
+                 &kp BSPC        &kp DOWN      &kp DEL                                   &kp EQUAL        &kp PLUS        &kp GRAVE
+                                                 &none    &kp BSPC      &spt _NUM SPACE  &kp BSPC
                         >;
                 };
                 
-                sym_layer {
-                    display-name = "Symbols";
+                num_layer {
+#$%^&*                    display-name = "Num";
 // -------------------------------    -------------------------------
-// |  \  |  |  |  _  |  =  | F16 |    |  ~  |  "  |  ;  |  :  |  !  |
-// |  /  |  *  |  -  |  +  | F13 |    |  `  |  '  |  ,  |  .  |  ?  |
-//       |  &  |  ^  |  %  |                |  @  |  #  |  $  |
+// |  &  |  ^  |  +  |  *  |  |  |    |  ~  |  1  |  2  |  3  |  4  |
+// |  #  |  %  |  -  |  /  |  \  |    |  `  |  5  |  6  |  7  |  8  |
+//       |  $  |  _  |  =  |                |  9  |  0  |  ., |
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
-   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp F16       &kp GRAVE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
-   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp F13       &kp TILDE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
-                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp HASH        &kp DLLR
-                                                          &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
+   &kp AMPS       &kp CARET        &kp PLUS        &kp STAR        &kp PIPE      &kp TILDE &kp N1        &kp N2       &kp N3        &kp N4
+   &hml LALT HASH &hml LCTRL PRCNT &hml LGUI MINUS &hsl LSHFT FSLH &kp BSLH      &kp GRAVE &hsr LSHFT N5 &hmr LGUI N6 &hmr LCTRL N7 &hmr LALT N8
+                  &kp DLLR         &kp UNDER       &kp EQUAL                               &kp N9        &kp N0       &kp KP_DOT
+                                            &none   &bst _NUM BSPC      &kp SPACE  &none
                         >;
                 };
 
@@ -548,7 +548,7 @@
 // | BT1 | BT2 | BT3 | BT4 | BT5 |    | F11 | F1 | F2  | F3  | F4 |
 // | BR- | BR+ | VL- | VL+ | USB |    | F12 | F5 | F6  | F7  | F8 |
 //       | cut | cpy | pst |                | F9 | F10 | APP |
-//                   | BR- | BR+ |    |     |     |
+//                   |     |     |    |     |     |
                         bindings = <
    &bt BT_SEL 0        &bt BT_SEL 1         &bt BT_SEL 2       &bt BT_SEL 3          &bt BT_SEL 4   &kp F11 &kp F1  &kp F2  &kp F3    &kp F4
    &hml LALT C_BRI_DEC &hml LCTRL C_BRI_INC &hml LGUI C_VOL_DN &hsl LSHFT C_VOL_UP   &out OUT_TOG   &kp F12 &kp F5  &kp F6  &kp F7    &kp F8
