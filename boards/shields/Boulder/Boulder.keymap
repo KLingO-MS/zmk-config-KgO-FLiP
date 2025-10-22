@@ -132,7 +132,7 @@
             timeout-ms = <50>;
             key-positions = <LHI RHI>;
             bindings = <&mo _BTF>;
-            layers = <_BASE _SYM _NAV>;
+            layers = <_BASE _NUM _NAV>;
         };
 
         // combo_BTF2 {
@@ -230,7 +230,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LHI LMI>;
             bindings = <&kp LPAR>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_RPAR {
@@ -238,7 +238,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RMI RHI>;
             bindings = <&kp RPAR>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_LBRC {
@@ -246,7 +246,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LMR LHI>;
             bindings = <&kp LBRC>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_RBRC {
@@ -254,7 +254,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RHI RMR>;
             bindings = <&kp RBRC>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_LBKT {
@@ -262,7 +262,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LMM LHI>;
             bindings = <&kp LBKT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_RBKT {
@@ -270,7 +270,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RHI RMM>;
             bindings = <&kp RBKT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_GT {
@@ -278,7 +278,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RMP RHI>;
             bindings = <&kp GT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_LT {
@@ -286,7 +286,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LMP LHI>;
             bindings = <&kp LT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
 // ------------------------- UTILITY COMBOS --------------------------------
