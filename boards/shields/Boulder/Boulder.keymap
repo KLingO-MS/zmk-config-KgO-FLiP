@@ -508,7 +508,7 @@
    &ak_b        &kp L        &kp M       &ak_p        &kp F           &kp W  &kp C        &kp O       &kp U        &ak_y
    &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
-                                     &bst _MOUS EQUAL  &bst _NAV BSPC  &spt _SYM SPACE  &spt _BTF PLUS
+                                     &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
 
