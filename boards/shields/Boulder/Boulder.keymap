@@ -501,13 +501,13 @@
                     display-name = "Base";
 // -------------------------------    -------------------------------
 // |  P  |  L  |  M  |  K  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
-// |  N  |  R  |  T  |  H  |  B  |    |  G  |  S  |  A  |  E  |  I  |
-//       |  J  |  V  |  D  |                |  Z  |  X  |  Q  |
+// |  N  |  R  |  T  |  D  |  B  |    |  G  |  S  |  A  |  E  |  I  |
+//       |  J  |  V  |  H  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
    &kp P        &kp L        &kp M       &kp K        &kp F           &kp W  &kp C        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT H &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp J        &kp V       &kp D                               &kp Z        &kp X       &kp Q
+   &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT D &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+                &kp J        &kp V       &kp H                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
