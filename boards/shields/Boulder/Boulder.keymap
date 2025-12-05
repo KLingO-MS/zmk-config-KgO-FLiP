@@ -94,16 +94,16 @@
         //         ;
         // };
 
-        // mlc_th: macro_lc_th {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp T>
-        //         , <&kp H>
-        //         ;
-        // };
+        mlc_th: macro_lc_th {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp T>
+                , <&kp H>
+                ;
+        };
 
         // mlc_mpl: macro_lc_mpl {
         //     compatible = "zmk,behavior-macro";
@@ -182,12 +182,12 @@
         };
 
 // ------------------------- CHARACTER COMBOS --------------------------------
-        // combo_MPL {
-        //     timeout-ms = <200>;
-        //     key-positions = <LTP LTR LTM>;
-        //     bindings = <&mlc_mpl>;
-        //     layers = <_BASE>;
-        // };
+        combo_TH {
+            timeout-ms = <250>;
+            key-positions = <LMM LMI>;
+            bindings = <&mlc_th>;
+            layers = <_BASE>;
+        };
 
         combo_OU {
             timeout-ms = <300>;
@@ -500,14 +500,14 @@
                 base_layer {
                     display-name = "Base";
 // -------------------------------    -------------------------------
-// |  P  |  L  |  M  |  K  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
-// |  N  |  R  |  T  |  D  |  B  |    |  G  |  S  |  A  |  E  |  I  |
-//       |  J  |  V  |  H  |                |  Z  |  X  |  Q  |
+// |  P  |  L  |  M  |  B  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
+// |  N  |  R  |  T  |  D  |  H  |    |  G  |  S  |  A  |  E  |  I  |
+//       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &kp P        &kp L        &kp M       &kp K        &kp F           &kp W  &kp C        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT D &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp J        &kp V       &kp H                               &kp Z        &kp X       &kp Q
+   &kp P        &kp L        &kp M       &kp B        &kp F           &kp W  &kp C        &kp O       &kp U        &kp Y
+   &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+                &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
