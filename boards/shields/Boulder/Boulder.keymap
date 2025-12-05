@@ -156,21 +156,21 @@
             layers = <_BTF>;
         };
 
-        // combo_NAVR {
-        //     timeout-ms = <50>;
-        //     require-prior-idle-ms = <300>;
-        //     key-positions = <RMI RMM RMR>;
-        //     bindings = <&tog _NAV>;
-        //     layers = <_BASE _SYM _NAV>;
-        // };
+        combo_NAVR {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <300>;
+            key-positions = <RMI RMM RMR>;
+            bindings = <&tog _NAV>;
+            layers = <_BASE _SYM _NAV>;
+        };
 
-        // combo_NAVL {
-        //     timeout-ms = <50>;
-        //     require-prior-idle-ms = <300>;
-        //     key-positions = <LMI LMM LMR>;
-        //     bindings = <&tog _NAV>;
-        //     layers = <_BASE _SYM _NAV>;
-        // };
+        combo_NAVL {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <300>;
+            key-positions = <LMI LMM LMR>;
+            bindings = <&tog _NAV>;
+            layers = <_BASE _SYM _NAV>;
+        };
 
 // ------------------------- MODS COMBOS --------------------------------
         combo_CAPS {
@@ -203,17 +203,17 @@
             layers = <_BASE>;
         };
 
-        // combo_QUA {
-        //     timeout-ms = <200>;
-        //     key-positions =<RBM RBI RBR>;
-        //     bindings = <&mlc_qua>;
+        // combo_Q {
+        //     timeout-ms = <50>;
+        //     key-positions =<LTI LTM>;
+        //     bindings = <&kp Q>;
         //     layers = <_BASE>;
         // };
 
-        // combo_TH {
-        //     timeout-ms = <185>;
-        //     key-positions =<LMM LMI>;
-        //     bindings = <&mlc_th>;
+        // combo_X {
+        //     timeout-ms = <50>;
+        //     key-positions =<LBM LBI>;
+        //     bindings = <&kp X>;
         //     layers = <_BASE>;
         // };
 
@@ -230,7 +230,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LHI LMI>;
             bindings = <&kp LPAR>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_RPAR {
@@ -238,7 +238,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RMI RHI>;
             bindings = <&kp RPAR>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_LBRC {
@@ -246,7 +246,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LMR LHI>;
             bindings = <&kp LBRC>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_RBRC {
@@ -254,7 +254,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RHI RMR>;
             bindings = <&kp RBRC>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_LBKT {
@@ -262,7 +262,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LMM LHI>;
             bindings = <&kp LBKT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_RBKT {
@@ -270,7 +270,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RHI RMM>;
             bindings = <&kp RBKT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_GT {
@@ -278,7 +278,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <RMP RHI>;
             bindings = <&kp GT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
         combo_LT {
@@ -286,7 +286,7 @@
             require-prior-idle-ms = <200>;
             key-positions = <LMP LHI>;
             bindings = <&kp LT>;
-            layers = <_BASE _SYM>;
+            layers = <_BASE>;
         };
 
 // ------------------------- UTILITY COMBOS --------------------------------
@@ -298,6 +298,12 @@
             require-prior-idle-ms = <200>;
         };
         
+        combo_MUTE {
+            timeout-ms = <50>;
+            key-positions = <LMI LMM>;
+            bindings = <&kp C_MUTE>;
+            layers = <_BTF>;
+        };
     };
 
     behaviors {
@@ -308,11 +314,12 @@
             bindings = <&kp D>;
 
             akt_th { trigger-keys = <T>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
+            akt_ch { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_wh { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_sh { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_gh { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
-            akt_ch { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
-            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+
+            // akt_bn { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp N>; };
         };
 
         ak_b: ak_b {
@@ -321,7 +328,7 @@
             bindings = <&kp B>;
 
             akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
-            // akt_pt { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp T>; };
+            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
         };
 
         ak_r: ak_r {
@@ -337,9 +344,11 @@
             #binding-cells = <0>;
             bindings = <&kp P>;
 
-            // akt_bn { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp N>; };
-            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
-
+            akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
+            
+            akt_bn { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp N>; };
+            
+            akt_cs { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
             akt_ws { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
             akt_gs { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
         };
@@ -491,14 +500,14 @@
                 base_layer {
                     display-name = "Base";
 // -------------------------------    -------------------------------
-// |  P  |  M  |  L  |  K  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
-// |  N  |  T  |  R  |  D  |  H  |    |  G  |  S  |  A  |  E  |  I  |
-//       |  J  |  Z  |  V  |                |  B  |  X  |  Q  |
+// |  P  |  L  |  M  |  K  |  F  |    |  W  |  C  |  O  |  U  |  Y  |
+// |  N  |  R  |  T  |  H  |  B  |    |  G  |  S  |  A  |  E  |  I  |
+//       |  J  |  V  |  D  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &ak_p        &kp M        &kp L       &kp K        &kp F           &kp W  &kp C        &kp O       &kp U        &ak_y
-   &hml LALT N  &hml LCTRL T &rml LGUI R &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-                &kp J        &kp Z       &kp V                               &kp B        &kp X       &kp Q
+   &kp P        &kp L        &kp M       &kp K        &kp F           &kp W  &kp C        &kp O       &kp U        &kp Y
+   &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT H &kp B           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+                &kp J        &kp V       &kp D                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
                 };
@@ -521,14 +530,14 @@
                 sym_layer {
                     display-name = "Symbols";
 // -------------------------------    -------------------------------
-// |  \  |  |  |  _  |  =  | F16 |    |  ~  |  "  |  ;  |  :  |  !  |
-// |  /  |  *  |  -  |  +  | F13 |    |  `  |  '  |  ,  |  .  |  ?  |
+// |  \  |  |  |  _  |  =  | F16 |    |  ~  |  !  |  ;  |  :  |  "  |
+// |  /  |  *  |  -  |  +  | F13 |    |  `  |  ?  |  ,  |  .  |  '  |
 //       |  &  |  ^  |  %  |                |  @  |  #  |  $  |
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
-   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp F16       &kp GRAVE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL
-   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp F13       &kp TILDE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK
-                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT         &kp HASH        &kp DLLR
+   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp F16       &kp GRAVE &kp EXCL         &kp SEMI        &kp COLON      &kp DQT
+   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp F13       &kp TILDE &hsr LSHFT QMARK &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT SQT
+                   &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT           &kp HASH        &kp DLLR
                                                           &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
                         >;
                 };
@@ -539,7 +548,7 @@
 // | BT1 | BT2 | BT3 | BT4 | BT5 |    | F11 | F1 | F2  | F3  | F4 |
 // | BR- | BR+ | VL- | VL+ | USB |    | F12 | F5 | F6  | F7  | F8 |
 //       | cut | cpy | pst |                | F9 | F10 | APP |
-//                   | BR- | BR+ |    |     |     |
+//                   |     |     |    |     |     |
                         bindings = <
    &bt BT_SEL 0        &bt BT_SEL 1         &bt BT_SEL 2       &bt BT_SEL 3          &bt BT_SEL 4   &kp F11 &kp F1  &kp F2  &kp F3    &kp F4
    &hml LALT C_BRI_DEC &hml LCTRL C_BRI_INC &hml LGUI C_VOL_DN &hsl LSHFT C_VOL_UP   &out OUT_TOG   &kp F12 &kp F5  &kp F6  &kp F7    &kp F8
