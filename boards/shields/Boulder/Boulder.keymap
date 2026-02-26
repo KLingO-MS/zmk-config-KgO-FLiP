@@ -189,12 +189,12 @@
         //     layers = <_BASE>;
         // };
 
-        // combo_OU {
-        //     timeout-ms = <300>;
-        //     key-positions = <RTM RTR>;
-        //     bindings = <&mlc_ou>;
-        //     layers = <_BASE>;
-        // };
+        combo_OU {
+            timeout-ms = <300>;
+            key-positions = <RTM RTR>;
+            bindings = <&mlc_ou>;
+            layers = <_BASE>;
+        };
 
         combo_QU {
             timeout-ms = <300>;
@@ -361,15 +361,6 @@
             akt_ue { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>; };
         };
 
-        ak_o: ak_o {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp O>;
-            dead-keys = <U>;
-
-            akt_ou { trigger-keys = <U>; max-prior-idle-ms = <250>; bindings = <&mlc_ou>; };
-        };
-
 // ------------------------- TAP-DANCES --------------------------------
         cp_c: cp_c {
             compatible = "zmk,behavior-tap-dance";
@@ -437,7 +428,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <120>;
+            // require-prior-idle-ms = <120>;
             bindings = <&kp>, <&ak_d>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -449,7 +440,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <120>;
+            // require-prior-idle-ms = <120>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -461,7 +452,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <120>;
+            // require-prior-idle-ms = <120>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -514,7 +505,7 @@
 //       |  J  |  V  |  K  |                |  Z  |  X  |  Q  |
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
-   &ak_b        &kp L        &kp M       &ak_p        &kp F           &kp W  &kp C        &ak_o       &kp U        &ak_y
+   &ak_b        &kp L        &kp M       &ak_p        &kp F           &kp W  &kp C        &kp O       &kp U        &ak_y
    &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
