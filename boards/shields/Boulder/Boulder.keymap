@@ -129,7 +129,7 @@
         // };
 
         combo_BTF {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <LHI RHI>;
             bindings = <&mo _BTF>;
             layers = <_BASE _SYM _NAV>;
@@ -150,14 +150,14 @@
         // };
 
         combo_BTCLR {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <LBR LBM LBI>;
             bindings = <&bt BT_CLR>;
             layers = <_BTF>;
         };
 
         combo_NAVR {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <300>;
             key-positions = <RMI RMM RMR>;
             bindings = <&tog _NAV>;
@@ -165,7 +165,7 @@
         };
 
         combo_NAVL {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <300>;
             key-positions = <LMI LMM LMR>;
             bindings = <&tog _NAV>;
@@ -174,7 +174,7 @@
 
 // ------------------------- MODS COMBOS --------------------------------
         combo_CAPS {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <LTI RTI>;
             bindings = <&caps_word>;
             require-prior-idle-ms = <200>;
@@ -226,7 +226,7 @@
 
 // ------------------------- SYMBOL COMBOS --------------------------------
         combo_LPAR {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <LHI LMI>;
             bindings = <&kp LPAR>;
@@ -234,7 +234,7 @@
         };
 
         combo_RPAR {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <RMI RHI>;
             bindings = <&kp RPAR>;
@@ -242,7 +242,7 @@
         };
 
         combo_LBRC {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <LMR LHI>;
             bindings = <&kp LBRC>;
@@ -250,7 +250,7 @@
         };
 
         combo_RBRC {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <RHI RMR>;
             bindings = <&kp RBRC>;
@@ -258,7 +258,7 @@
         };
 
         combo_LBKT {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <LMM LHI>;
             bindings = <&kp LBKT>;
@@ -266,7 +266,7 @@
         };
 
         combo_RBKT {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <RHI RMM>;
             bindings = <&kp RBKT>;
@@ -274,7 +274,7 @@
         };
 
         combo_GT {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <RMP RHI>;
             bindings = <&kp GT>;
@@ -282,7 +282,7 @@
         };
 
         combo_LT {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <LMP LHI>;
             bindings = <&kp LT>;
@@ -426,7 +426,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
             // require-prior-idle-ms = <120>;
             bindings = <&kp>, <&ak_d>;
@@ -438,7 +438,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
             // require-prior-idle-ms = <120>;
             bindings = <&kp>, <&kp>;
@@ -450,7 +450,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
             // require-prior-idle-ms = <120>;
             bindings = <&kp>, <&kp>;
