@@ -21,6 +21,11 @@
 #define _BTF     3
 #define _MOUS    4
 
+&sk {
+    release-after-ms = <1000>;
+    quick-release;
+};
+
 / {
 // ------------------------- MACROS --------------------------------
     macros {
@@ -178,6 +183,14 @@
             key-positions = <LTI RTI>;
             bindings = <&caps_word>;
             require-prior-idle-ms = <200>;
+            layers = <_BASE>;
+        };
+
+        combo_SHIFT {
+            timeout-ms = <60>;
+            key-positions = <LMI RMI>;
+            bindings = <&sk LSHIFT>;
+            require-prior-idle-ms = <120>;
             layers = <_BASE>;
         };
 
@@ -425,10 +438,10 @@
         asl: aks_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            // require-prior-idle-ms = <120>;
+            require-prior-idle-ms = <250>;
             bindings = <&kp>, <&ak_d>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -463,7 +476,7 @@
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <170>;
+            quick-tap-ms = <150>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
@@ -506,7 +519,7 @@
 //        | _NAV(=) | _SYM(BSPC) |    | _NAV(SPC) | _SYM(+) |
                         bindings = <
    &ak_b        &kp L        &kp M       &ak_p        &kp F           &kp W  &kp C        &kp O       &kp U        &ak_y
-   &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+   &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H           &kp G  &hmr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I 
                 &kp J        &kp V       &kp K                               &kp Z        &kp X       &kp Q
                                      &bst _MOUS EQUAL  &bst _SYM BSPC  &spt _NAV SPACE  &spt _BTF PLUS
                         >;
@@ -521,7 +534,7 @@
 //                  | RET | BSPC |    | LSFT | BSPC |
                         bindings = <
    &kp N8        &kp N7        &kp N6       &kp N5        &kp INS         &kp PG_UP  &kp HOME        &kp UP          &kp END          &kp ESC
-   &hml LALT N4  &hml LCTRL N3 &hml LGUI N2 &hsl LSHFT N1 &kp PSCRN       &kp PG_DN  &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
+   &hml LALT N4  &hml LCTRL N3 &hml LGUI N2 &hml LSHFT N1 &kp PSCRN       &kp PG_DN  &hmr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
                  &kp KP_DOT    &kp N9       &kp N0                                   &kp TAB         &kp DOWN        &kp DEL
                                                 &kp RET   &bst _SYM BSPC  &kp LSHFT  &kp BSPC
                         >;
@@ -536,7 +549,7 @@
 //                  |     | BSPC |    | SPC | BSPC |
                         bindings = <
    &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp F16       &kp GRAVE &kp EXCL         &kp SEMI        &kp COLON      &kp DQT
-   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp F13       &kp TILDE &hsr LSHFT QMARK &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT SQT
+   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hml LSHFT PLUS &kp F13       &kp TILDE &hmr LSHFT QMARK &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT SQT
                    &kp AMPS        &kp CARET       &kp PRCNT                               &kp AT           &kp HASH        &kp DLLR
                                                           &none    &kp BSPC      &spt _NAV SPACE  &kp BSPC
                         >;
@@ -551,7 +564,7 @@
 //                   |     |     |    |     |     |
                         bindings = <
    &bt BT_SEL 0        &bt BT_SEL 1         &bt BT_SEL 2       &bt BT_SEL 3          &bt BT_SEL 4   &kp F11 &kp F1  &kp F2  &kp F3    &kp F4
-   &hml LALT C_BRI_DEC &hml LCTRL C_BRI_INC &hml LGUI C_VOL_DN &hsl LSHFT C_VOL_UP   &out OUT_TOG   &kp F12 &kp F5  &kp F6  &kp F7    &kp F8
+   &hml LALT C_BRI_DEC &hml LCTRL C_BRI_INC &hml LGUI C_VOL_DN &hml LSHFT C_VOL_UP   &out OUT_TOG   &kp F12 &kp F5  &kp F6  &kp F7    &kp F8
                        &cp_x                &cp_c              &cp_v                                        &kp F9  &kp F10 &kp K_APP
                                                                      &none   &none   &none   &none
                         >;
